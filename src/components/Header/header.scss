@@ -1,0 +1,121 @@
+@import "../../variable.scss";
+
+
+// .container{
+//     width: 90vw;
+//     margin: 0px auto;
+//     max-width: var($max-width);
+
+//    .navbar-center {
+//         display: flex;
+//     -webkit-box-align: center;
+//     align-items: center;
+//     -webkit-box-pack: justify;
+//     justify-content: space-between;
+//     }
+.main-container {
+    .mainHeader {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    img {
+        width: 175px;
+        margin-left: 50px;
+        overflow: clip;
+        padding-top: 5px;
+    }
+}
+
+.navbar-conatiner {
+
+    .navbar-lists {
+        display: flex;
+        gap: 3rem;
+        align-items: baseline;
+        margin-right: 300px;
+        margin-top: 25px;
+        list-style: none;
+    }
+
+    .navbar-link {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        color: slategray;
+        list-style: none;
+    }
+
+    // .:hover {
+    //     border-bottom: 2px solid #c5a491;
+    // }
+
+    @media (min-width: 992px) {
+        .navbar-links {
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .navbar-links li {
+            margin: 0px 0.5rem;
+        }
+
+    }
+    .navbar-login {
+        display: flex;
+        gap: 40px;
+        margin-right: 100px;
+        list-style: none;
+        padding-top: 20px;
+        letter-spacing: 1.5px;
+    
+        li a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #102a42;
+            letter-spacing: 1.5px;
+    
+        }
+    }
+
+
+.res-navbar-btn {
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.cart-trolly- {
+    position: relative;
+
+    .cart-trolley {
+        position: relative;
+        font-size: 1.4rem;
+    }
+}
+
+.cart-total--item {
+    font-size: medium;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    background-color: #ab7a5f;
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    top: -30%;
+    left: 90%;
+   
+}
+
+}
+.active .close-outline {
+    display: inline-block;
+}

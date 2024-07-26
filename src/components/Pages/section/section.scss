@@ -1,0 +1,19 @@
+@import "../../../variable.scss";
+
+.sec-container{
+
+    .sec-pro{
+    background: #eaded7;
+    width: 100%;
+    min-height: 10vh;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color:  #5f4435;
+ 
+   
+    }
+    h2{
+        margin-left: 80px;
+    }
+}
