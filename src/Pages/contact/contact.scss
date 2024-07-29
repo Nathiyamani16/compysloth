@@ -1,0 +1,66 @@
+@import "../../variable.scss";
+
+.conatct-con {
+    background-color: #fff;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .title-con {
+        color: $grey-1;
+        line-height: 1;
+        margin-left: 60px;
+
+
+    }
+
+    h2 {
+        letter-spacing: 1px;
+    }
+
+    p {
+        margin-top: 30px;
+        line-height: 2;
+        color: $grey-5;
+    }
+
+    .con-form {
+        width: 90vw;
+        max-width: 500px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        input {
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 2px solid $black;
+            border-right: none;
+            color: $grey-3;
+            border-top-left-radius: $radius;
+            border-bottom-left-radius: $radius;
+
+        }
+
+        button {
+            background: $primary-5;
+            text-transform: capitalize;
+            letter-spacing: 0.1rem;
+            cursor: pointer;
+            transition: all 0.3s linear;
+            color: $black;
+            border-top-right-radius: 0.2rem;
+            border-bottom-right-radius: 0.2rem;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        button:hover {
+            color: $white;
+            // background-color: $primary-8;
+        }
+    }
+}

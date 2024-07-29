@@ -1,0 +1,72 @@
+@import "../../variable.scss";
+
+.feature-con {
+    background-color: $grey-10;
+    margin-top: 0;
+    margin-bottom: 100px;
+
+  
+}
+.title-con {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.title-con .pro-under {
+    background: #ab7a5f;
+    height: .25rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 6rem;
+
+}
+.feature-con{
+
+}
+.featured {
+    margin: 1rem auto;
+    display: grid;
+    gap: 10px;
+    margin-left: 70px;
+    margin-right: 70px;
+    img {
+      height: 225px;
+    }
+  }
+ 
+  @media (min-width: 576px) {
+    .featured {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    }
+}
+.bt {
+     
+    
+display: ruby-text;
+    width: 148px;
+    margin: 0px auto;
+    border: none;
+    background: $primary-5;
+    border-radius: $radius;
+    color: $white;
+    border-color: transparent;
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    color: $primary-10;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    letter-spacing: $spacing;
+    padding: .375rem .75rem;
+    text-transform: uppercase;
+    transition: $transition;
+   
+
+}
+
+
+
+
+
+

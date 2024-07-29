@@ -1,12 +1,12 @@
-
+@import "../../variable.scss";
 
 .container {
-  
+  margin-bottom: 0;
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    // grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(100px, auto);
     padding: 1rem 0;
   }
 
@@ -70,7 +70,17 @@
   }
 
   .hero-section-image .accent-img {
+
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
     width: 250px;
+    transform: translateX(-50%);
+    border-radius:$radius;
+   
+
+
+   
 
   }
 
@@ -110,32 +120,32 @@
 
 // -----------------------------------------------------------------
 
-.container-fe {
+// .container-fe {
 
-  .featured-container{
-  background: #f1f5f8;
+//   .featured-container{
+//   background: #f1f5f8;
  
 
-  }
+//   }
 
 
-  h1 {
-    font-size: 2em;
-    color: #102a42;
-    text-align: center;
-    padding-top: 70px;
-  }
+//   h1 {
+//     font-size: 2em;
+//     color: #102a42;
+//     text-align: center;
+//     padding-top: 70px;
+//   }
 
-  .button-all{
-    background: #ab7a5f;
-    border: none;
-    // width: 30%;
-    // height: 10%;
-    border-radius: 4px;
-    color: white;
-    font-size: 1rem;
+//   .button-all{
+//     background: #ab7a5f;
+//     border: none;
+//     // width: 30%;
+//     // height: 10%;
+//     border-radius: 4px;
+//     color: white;
+//     font-size: 1rem;
 
-    position: absolute;
+//     position: absolute;
    
-  }
-}
+//   }
+// }
