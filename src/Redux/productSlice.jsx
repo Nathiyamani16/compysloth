@@ -1,52 +1,40 @@
-// import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-// const initialState={
-// products:[]
-// }
+const initialState = {
+  isSidebarOpen: true,
+  products_error: false,
+  products: [],
+  featured_products: [],
+  single_product_error: false,
+  single_product: {},
+};
 
-// const ProductsSlice=createSlice({
-//     name:"products",
-//     initialState,
-//     reducers:{},
-//     extraReducers:builder =>{
-//         builder
-//         .addCase({
+const productsSlice = createSlice({
+  name: 'products',
+  initialState,
+  reducers: {
+    openSidebar: (state) => {
+      state.isSidebarOpen = true;
+    },
+    closeSidebar: (state) => {
+      state.isSidebarOpen = false;
+    },
+    getProductsSuccess: (state, action) => {
+      state.products = action.payload;
+      state.featured_products = action.payload.filter((product) => product.featured === true);
+    },
+    getProductsError: (state) => {
+      state.products_error = true;
+    },
+  },
+});
 
-//         })
-//     }
+export const {
+  openSidebar,
+  closeSidebar,
+  getProductsSuccess,
+  getProductsError,
+} = productsSlice.actions;
 
-
-// })
-
-// export default ProductsSlice.reducer
-
-
-
-
-// import { createSlice} from '@reduxjs/toolkit';
-
-// const initialState = {
-// feature_products: [],
-// };
-// const productsSlice = createSlice({
-//   name: 'products',
-//   initialState,
-//   reducers: {},
-//   extraReducers: (builder) => {
-//     builder
-//     .addCase(fetchProducts.fulfilled,(state,action)=>{
-//         state.products=action.payload;
-//         state.feature_products=action.payload.filter((product)=>product.featured === true);
-        
-//     })
-//     //   .addCase(fetchProducts.fulfilled, (state, action) => {
-//     //     state.products = action.payload;
-//     //     state.feature_products = action.payload.filter((product) => product.featured === true);
-//     //   })
-     
-//   },
-// });
-
-// // export const { openSidebar, closeSidebar } = productsSlice.actions;
-
-// export default productsSlice.reducer;
+export default productsSlice.reducer;
