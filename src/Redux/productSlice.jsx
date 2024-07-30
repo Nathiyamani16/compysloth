@@ -1,12 +1,10 @@
+
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const initialState = {
   isSidebarOpen: true,
-  products_error: false,
   products: [],
   featured_products: [],
-  single_product_error: false,
   single_product: {},
 };
 
@@ -22,10 +20,11 @@ const productsSlice = createSlice({
     },
     getProductsSuccess: (state, action) => {
       state.products = action.payload;
-      state.featured_products = action.payload.filter((product) => product.featured === true);
+      state.featured_products = action.payload.filter((product) => product.featured);
     },
-    getProductsError: (state) => {
-      state.products_error = true;
+
+    setSingleProduct: (state, action) => {
+      state.single_product = action.payload;
     },
   },
 });
@@ -35,6 +34,11 @@ export const {
   closeSidebar,
   getProductsSuccess,
   getProductsError,
+  setSingleProduct,
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
+
+
+
+

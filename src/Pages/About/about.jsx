@@ -1,12 +1,13 @@
 import {} from 'react'
 import "./about.scss"
-import Section from '../section/section'
+import FirstPage from '../section/firstpage'
+
 
 const About = () => {
 
   return (
    <>
-   <Section/>
+   <FirstPage pageName="about"/>
    <div className='about-container'>
     <div className='about-img'>
    <img

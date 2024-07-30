@@ -32,7 +32,7 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/product"
+              to="/products"
               className="navbar-link ho"
               onClick={() => setMenuIcon(false)}>
               Products
@@ -43,7 +43,7 @@ const Navbar = () => {
         <ul className="navbar-login">
 
         <li>
-            <NavLink to="/" className="navbar-link cart-trolly-">
+            <NavLink to="/cart" className="navbar-link cart-trolly-">
             Cart
               <FaShoppingCart className="cart-trolley" />
               <span className="cart-total--item">0</span>

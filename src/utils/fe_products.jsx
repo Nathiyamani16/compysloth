@@ -5,7 +5,7 @@ const feature_products = [
   
   {
     id: "recZkNf2kwmdBcqd0",
-    name: "Accent chair",
+    name: "accent chair",
     price: 25999,
     image: "https://www.course-api.com/images/store/product-1.jpeg",
     colors: [
@@ -20,7 +20,7 @@ const feature_products = [
   },
   {
         id: "recZkNf2kwmdBcqd0",
-    name: "Accent chair",
+    name: "accent chair",
     price: 25999,
     image: "https://www.course-api.com/images/store/product-1.jpeg",
     colors: [
@@ -35,7 +35,7 @@ const feature_products = [
   },
   {
     id: "recZkNf2kwmdBcqd0",
-name: "Accent chair",
+name: "accent chair",
 price: 25999,
 image: "https://www.course-api.com/images/store/product-1.jpeg",
 colors: [

@@ -1,8 +1,8 @@
-import React from 'react';
+import {} from 'react';
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs';
-// import './Stars.scss';
+import './stars.scss';
 
-const Stars = ({ stars, reviews }) => {
+const Stars = ( {stars, reviews} ) => {
   const tempStars = Array.from({ length: 5 }, (_, index) => {
     const number = index + 0.5;
     return (
@@ -19,8 +19,8 @@ const Stars = ({ stars, reviews }) => {
   });
 
   return (
-    <div className='stars-container'>
-      <div className='stars'>{tempStars}</div>
+    <div className='star-con'>
+      <div className='star'>{tempStars}</div>
       <p className='reviews'>({reviews} customer reviews)</p>
     </div>
   );

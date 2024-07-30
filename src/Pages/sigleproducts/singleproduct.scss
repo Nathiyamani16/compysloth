@@ -1,0 +1,78 @@
+@import "../../variable.scss";
+
+  .single-page {
+    display: grid;
+    grid-template-columns: (2,1fr);
+    
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+   
+  }
+  .btn1{
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    background:$primary-5;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-left: 60px;
+  }
+
+  .img-grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 3rem;
+}
+.content{
+    h1{
+        color: $grey-1;
+        text-transform:capitalize;
+        margin-top: 40px;
+        font-weight: bold;
+
+    }
+}
+
+  .price1 {
+    color:$primary-5;
+  }
+  .description {
+    line-height: 2;
+    width: 34em;
+    max-width: 40em;
+    color: $grey-3;
+  }
+  .information {
+    text-transform: capitalize;
+    width: 300px;
+    display: grid;
+    grid-template-columns: 125px 1fr;
+    span{
+      font-weight: 700;
+      color: $grey-1;
+      font-weight: bold;
+    }
+    
+  
+  }
+  hr{
+    border-top: 2px solid $grey-6;
+  width: 500px;
+    color: inherit;
+    opacity: .35;
+  }
+
+  @media (min-width: 992px) {
+    .product-center {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+    .price {
+      font-size: 1.25rem;
+    }
+  }
+

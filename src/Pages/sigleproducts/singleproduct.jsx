@@ -1,33 +1,42 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-// import { formatPrice } from '../../utils/helpers';
-// import ProductImages from '../../components/ProductImages';
-// import AddToCart from '../../components/AddToCart';
-// import Stars from '../../components/Stars';
-// import PageHero from '../../components/PageHero';
-// import './SingleProductPage.scss';
 
-const SingleProductPage = () => {
+
+import { useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSingleProduct } from '../../Redux/productSlice'; 
+import ProductImages from '../../components/productImg/productimg';
+import Stars from '../../components/Starts/star';
+import AddToCart from '../../components/AddCart/addcart';
+import axios from 'axios';
+import "../sigleproducts/singleproduct.scss"
+
+import FirstPage from '../section/firstpage';
+
+const SingleProduct = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState(null);
+  const dispatch = useDispatch();
+  const { single_product: product } = useSelector(state => state.products);
+
 
   useEffect(() => {
     const fetchProduct = async () => {
-      try {
-        const response = await fetch(`https://www.course-api.com/react-store-single-product?id=${id}`);
-        const data = await response.json();
-        setProduct(data);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
 
+        const response = await axios.get(`https://www.course-api.com/react-store-single-product?id=${id}`);
+        dispatch(setSingleProduct(response.data));
+     
+    }
     fetchProduct();
-  }, [id]);
 
-  if (!product) {
-    return <h2>Product not found</h2>;
-  }
+  }, [id, dispatch]);
+
+  console.log(product);
+
+  const USDollar = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+});
+  
+  
 
   const {
     name,
@@ -42,37 +51,44 @@ const SingleProductPage = () => {
   } = product;
 
   return (
-    <main>
-      <PageHero title={name} product />
-      <div className='section section-center page'>
-        <Link to='/products' className='btn'>
-          back to products
+    <>
+       <FirstPage pageName={name} product/>
+    <div className='single-page'>
+      <div className=' section-center page'>
+        <Link to='/products' className='btn1'>
+          Back to Products
         </Link>
         <div className='product-center'>
-          {/* <ProductImages images={images} /> */}
+            <div className='img-grid'>
+            <ProductImages images={images} />
+
+          
           <section className='content'>
-            <h2>{name}</h2>
-            {/* <Stars stars={stars} reviews={reviews} /> */}
-            <h5 className='price'>{formatPrice(price)}</h5>
-            <p className='desc'>{description}</p>
-            <p className='info'>
+            <h1>{name}</h1>
+            <Stars stars={stars} reviews={reviews} />
+            <h5 className='price1'>{USDollar.format(price)}</h5> 
+            <p className='description'>{description}</p>
+            <p className='information'>
               <span>Available: </span>
-              {stock > 0 ? 'In stock' : 'out of stock'}
+              {stock > 0 ? 'In stock' : 'Out of stock'}
             </p>
-            <p className='info'>
+            <p className='information'>
               <span>SKU: </span>
               {sku}
             </p>
-            <p className='info'>
-              <span>Company: </span>
+            <p className='information'>
+              <span>Brand: </span>
               {company}
             </p>
-            {/* {stock > 0 && <AddToCart product={product} />} */}
+            <hr/>
+            {stock > 0 && <AddToCart product={product} />}
           </section>
+          </div>
         </div>
       </div>
-    </main>
+      </div>
+    </>
   );
 };
 
-export default SingleProductPage;
+export default SingleProduct;

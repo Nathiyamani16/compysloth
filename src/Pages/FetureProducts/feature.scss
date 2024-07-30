@@ -1,142 +1,55 @@
-// @import "../../variable.scss";
+@import "../../variable.scss";
 
-// .feature-con {
-//     background-color: $grey-10;
-//     margin-top: 0;
-//     margin-bottom: 100px;
-
-  
-// }
-// .title-con {
-//     text-align: center;
-//     padding-top: 100px;
-// }
-
-// .title-con .pro-under {
-//     background: #ab7a5f;
-//     height: .25rem;
-//     margin-left: auto;
-//     margin-right: auto;
-//     width: 6rem;
-
-// }
-// .feature-con{
-
-// }
-// .featured {
-//     margin: 1rem auto;
-//     display: grid;
-//     gap: 10px;
-//     margin-left: 70px;
-//     margin-right: 70px;
-//     img {
-//       height: 225px;
-//     }
-//   }
- 
-//   @media (min-width: 576px) {
-//     .featured {
-//       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-//     }
-// }
-// .bt {
-     
-    
-// display: ruby-text;
-//     width: 148px;
-//     margin: 0px auto;
-//     border: none;
-//     background: $primary-5;
-//     border-radius: $radius;
-//     color: $white;
-//     border-color: transparent;
-//     border-radius: .25rem;
-//     box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
-//     color: $primary-10;
-//     cursor: pointer;
-//     font-size: .875rem;
-//     font-weight: 400;
-//     letter-spacing: .1rem;
-//     letter-spacing: $spacing;
-//     padding: .375rem .75rem;
-//     text-transform: uppercase;
-//     transition: $transition;
-   
-
-// // }
-// .section {
-//   background: var(--clr-grey-10);
-//   padding: 4rem 0;
-// }
-
-// .featured {
-//   margin: 4rem auto;
-//   display: grid;
-//   gap: 2.5rem;
-// }
-
-// .featured img {
-//   height: 225px;
-// }
-
-// .btn {
-//   display: block;
-//   width: 148px;
-//   margin: 0 auto;
-//   text-align: center;
-// }
-
-// @media (min-width: 576px) {
-//   .featured {
-//     grid-template-columns: repeat(3, 1fr); /* 3 columns layout */
-//   }
-// }
-
-.section {
-  background: #f0f0f0; // Light grey background
-  padding: 4rem 0;
-
-  .title {
-    text-align: center;
-    margin-bottom: 2rem;
-
-    h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    .underline {
-      width: 5rem;
-      height: 0.25rem;
-      background: #c59d5f;
-      margin: 0 auto;
-    }
-  }
+.feature-con {
+  background-color: $grey-10;
+  margin-top: 0;
+  padding: 40px 0px ;
 
   .featured {
-    margin: 4rem auto;
-    display: grid;
-    gap: 2.5rem;
     max-width: 1200px;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
 
-    @media (min-width: 576px) {
-      grid-template-columns: repeat(3, 1fr); // 3 columns layout
-    }
   }
 
-  .btn {
-    display: block;
-    width: 148px;
-    margin: 0 auto;
+  .title-con {
     text-align: center;
-    background: #c59d5f;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    text-transform: uppercase;
-    transition: background 0.3s ease;
 
-    &:hover {
-      background: #b07b4d;
+
+    .pro-under {
+      background: #ab7a5f;
+      height: .25rem;
+      margin-left: auto;
+      margin-right: auto;
+      width: 6rem;
+
     }
   }
+
+  img {
+    height: 225px;
+  }
+
+  .bt {
+    display: ruby-text;
+    width: 148px;
+    margin: 0px auto;
+    border: none;
+    background: $primary-5;
+    border-radius: $radius;
+    color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+    color: $primary-10;
+    cursor: pointer;
+    font-size: .875rem;
+    font-weight: 400;
+    letter-spacing: $spacing;
+    padding: .375rem .75rem;
+    text-transform: uppercase;
+    transition: $transition;
+
+
+  }
+
 }

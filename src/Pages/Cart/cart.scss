@@ -1,0 +1,28 @@
+@import '../../variable.scss';
+
+.cart-con{
+    .empty-page{
+        margin-top: 5rem;
+        text-align: center;
+        color: $grey-1;
+        margin-bottom: 5rem;
+        
+    }
+    .btn-fill{
+        letter-spacing: 2px;
+        justify-items: center;
+        display: inline-block;
+        font-size: small;
+        margin-top: 10px;
+        text-align: center;
+        background:$primary-5;
+        border: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+}

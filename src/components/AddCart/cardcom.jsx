@@ -1,5 +1,5 @@
-// src/components/CartComponent.jsx
-import React from 'react';
+
+import {} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, removeCartItem, toggleCartItemAmount, clearCart, countCartTotals } from '../features/cart/cartSlice';
 

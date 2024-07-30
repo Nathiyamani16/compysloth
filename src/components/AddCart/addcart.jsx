@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaCheck, FaPlus, FaMinus } from 'react-icons/fa';
 import { useDispatch } from 'react-redux';
 import { addToCart } from "../../Redux/cartSlice"
-import './AddToCart.scss';
+import './addcart.scss';
 
+// eslint-disable-next-line react/prop-types
 const AddToCart = ({ product }) => {
   const dispatch = useDispatch();
   const { id, stock, colors } = product;
@@ -14,22 +16,22 @@ const AddToCart = ({ product }) => {
   const [amount, setAmount] = useState(1);
 
   const increase = () => {
-    setAmount((oldAmount) => {
-      let tempAmount = oldAmount + 1;
-      if (tempAmount > stock) {
-        tempAmount = stock;
+    setAmount((preAmt) => {
+      let temAmt = preAmt + 1;
+      if (temAmt > stock) {
+        temAmt = stock;
       }
-      return tempAmount;
+      return temAmt;
     });
   };
 
   const decrease = () => {
-    setAmount((oldAmount) => {
-      let tempAmount = oldAmount - 1;
-      if (tempAmount < 1) {
-        tempAmount = 1;
+    setAmount((preAmt) => {
+      let temAmt = preAmt - 1;
+      if (temAmt < 1) {
+        temAmt = 1;
       }
-      return tempAmount;
+      return temAmt;
     });
   };
 
@@ -39,17 +41,17 @@ const AddToCart = ({ product }) => {
 
   return (
     <div className='add-to-cart'>
-      <div className='colors'>
-        <span>colors : </span>
+      <div className='color-sec'>
+        <span className='co'>colors : </span>
         <div>
           {colors.map((color, index) => (
             <button
               key={index}
               style={{ background: color }}
-              className={`${mainColor === color ? 'color-btn active' : 'color-btn'}`}
+              className={`${mainColor === color ? 'color-btn-single active' : 'color-btn-single'}`}
               onClick={() => setMainColor(color)}
             >
-              {mainColor === color ? <FaCheck /> : null}
+              {mainColor === color ? <FaCheck  className='tick'/> : null}
             </button>
           ))}
         </div>
@@ -66,10 +68,10 @@ const AddToCart = ({ product }) => {
         </div>
         <Link
           to='/cart'
-          className='btn'
+          className='add-btn'
           onClick={handleAddToCart}
         >
-          add to cart
+          Add to cart
         </Link>
       </div>
     </div>
