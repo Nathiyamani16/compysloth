@@ -1,6 +1,6 @@
 import {} from 'react'
 import "./about.scss"
-import FirstPage from '../section/firstpage'
+import FirstPage from '../firstpage/firstpage'
 
 
 const About = () => {

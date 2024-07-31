@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import {} from 'react'
-import "./section.scss"
+import "./firstpage.scss"
 import { Link } from 'react-router-dom'
 
 

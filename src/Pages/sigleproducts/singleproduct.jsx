@@ -10,7 +10,7 @@ import AddToCart from '../../components/AddCart/addcart';
 import axios from 'axios';
 import "../sigleproducts/singleproduct.scss"
 
-import FirstPage from '../section/firstpage';
+import FirstPage from '../firstpage/firstpage';
 
 const SingleProduct = () => {
   const { id } = useParams();
@@ -92,3 +92,8 @@ const SingleProduct = () => {
 };
 
 export default SingleProduct;
+
+
+
+
+
