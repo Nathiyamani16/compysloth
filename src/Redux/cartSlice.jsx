@@ -37,44 +37,44 @@ const cartSlice = createSlice({
         state.cart.push(newItem);
       }
     },
-    removeCartItem(state, action) {
-      state.cart = state.cart.filter((item) => item.id !== action.payload);
-    },
-    toggleCartItemAmount(state, action) {
-      const { id, value } = action.payload;
-      state.cart = state.cart.map((item) => {
-        if (item.id === id) {
-          if (value === 'inc') {
-            const newAmount = Math.min(item.amount + 1, item.max);
-            return { ...item, amount: newAmount };
-          }
-          if (value === 'dec') {
-            const newAmount = Math.max(item.amount - 1, 1);
-            return { ...item, amount: newAmount };
-          }
-        }
-        return item;
-      });
-    },
-    clearCart(state) {
-      state.cart = [];
-    },
-    countCartTotals(state) {
-      const totals = state.cart.reduce(
-        (acc, item) => {
-          acc.total_items += item.amount;
-          acc.total_amount += item.price * item.amount;
-          return acc;
-        },
-        { total_items: 0, total_amount: 0 }
-      );
-      state.total_items = totals.total_items;
-      state.total_amount = totals.total_amount;
-    },
+    // removeCartItem(state, action) {
+    //   state.cart = state.cart.filter((item) => item.id !== action.payload);
+    // },
+    // toggleCartItemAmount(state, action) {
+    //   const { id, value } = action.payload;
+    //   state.cart = state.cart.map((item) => {
+    //     if (item.id === id) {
+    //       if (value === 'inc') {
+    //         const newAmount = Math.min(item.amount + 1, item.max);
+    //         return { ...item, amount: newAmount };
+    //       }
+    //       if (value === 'dec') {
+    //         const newAmount = Math.max(item.amount - 1, 1);
+    //         return { ...item, amount: newAmount };
+    //       }
+    //     }
+    //     return item;
+    //   });
+    // },
+    // clearCart(state) {
+    //   state.cart = [];
+    // },
+    // countCartTotals(state) {
+    //   const totals = state.cart.reduce(
+    //     (acc, item) => {
+    //       acc.total_items += item.amount;
+    //       acc.total_amount += item.price * item.amount;
+    //       return acc;
+    //     },
+    //     { total_items: 0, total_amount: 0 }
+    //   );
+    //   state.total_items = totals.total_items;
+    //   state.total_amount = totals.total_amount;
+    // },
   },
 });
 
-// Export actions
+
 export const {
   addToCart,
   removeCartItem,
@@ -83,5 +83,5 @@ export const {
   countCartTotals,
 } = cartSlice.actions;
 
-// Export reducer
+
 export default cartSlice.reducer;

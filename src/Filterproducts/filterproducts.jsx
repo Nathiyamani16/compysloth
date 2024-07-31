@@ -1,225 +1,110 @@
-import { } from 'react'
-import "../Filterproducts/filterproducts.scss"
-import { useSelector } from 'react-redux'
-import   { updateFilters } from '../Redux/filterSlice'
-
-const FilterProducts = () => {
-
-const {filter_products:text,company,color,price,shipping}=useSelector(state => state.filter)
-
-// const categories=filterSlice(cat)
-    return (
-        <div className='filterproducts-con'>
-            <div className='side-filter-con'>
-                <form onSubmit={(e)=>e.preventDefault()}>
-                    <div>
-                        <input
-                            type='text'
-                            name='text'
-                            placeholder='search'
-                             value={text}
-                             onChange={updateFilters}
-                            className='search-bar'
-                        />
-                    </div>
-                    <div>
-                        <h5>Category</h5>
-                        <div>
-                            {/* {categories.map((curr,idx) => {
-                                return(
-                                    <button
-                                    key={idx}
-                                    type='button'
-                                    onClick={updateFilters}
-                                    className={`${category === curr.toLowerCase()? 'active' : null}`}
-                                    >
-                                        {curr}
-                                </button>
-                                )
-                            })} */}
-                        </div>
-                    </div>
+import { useEffect, useState } from 'react'
+import "./filterproducts.scss"
 
 
-                </form>
+const Filterproducts = () => {
 
-            </div>
+  const [filters, setFilteredProducts] = useState({
+    text: "",
+    colors: ["all"],
+    category: ["all"],
+    company: ["all"],
+    price: 0,
+
+  })
+
+  const [products, setProducts] = useState()
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('https://www.course-api.com/react-store-products');
+      const data = await response.json();
+      setProducts(data);
+
+      const category = [...new Set(data?.map(curr => curr.category))];
+      const company = [...new Set(data?.map(curr => curr.company))];
+      const colors = [...new Set(data?.map(curr => curr.colors))];
+
+
+
+      setFilteredProducts((pre) => ({
+        ...pre,
+        category: ["all", ...category],
+        company: ["all", ...company],
+        colors: ["all", ...colors],
+        
+
+      }));
+    }
+    fetchProducts();
+  }, [])
+
+
+
+  
+  const catagories = filters.category
+  const companyfilter = filters.company
+  const colorsproduct = filters.colors
+
+
+
+  return (
+    <>
+      <div className='side-filter-con'>
+        <div className='form-con'>
+          <div className='search-con'>
+            <input
+              text='text'
+              type='text' 
+              className='search-input'/>
+          </div>
+          <div className='category'>
+            <h5>Category</h5>
+            {catagories.map((cur, idx) => (
+              <button
+                key={idx}
+                type='button'
+                name='category'
+                className='button-ca' >
+                {cur}
+              </button>
+            ))}
+          </div>
+          <div className='company-con'>
+            <h3>Company</h3>
+            <select>
+              {companyfilter.map((curr, idx) =>
+                <option
+                  key={idx}
+                  type="select"
+                  className='company-select'
+                >{curr}</option>
+              )}
+            </select>
+          </div>
+          <div className='colors-con'>
+            {colorsproduct.map((curr, idx) => {
+              console.log(curr);
+              <button
+                key={idx}
+                style={{ background: curr }}
+              >
+                {curr}
+
+              </button>
+            })}
+          </div>
+          <div>Price</div>
+
+
 
         </div>
-    )
+
+      </div>
+    </>
+
+  )
 }
 
-export default FilterProducts
+export default Filterproducts
 
 
-
-
-// import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import Wrapper from './filters-style';
-// import { 
-//   updateFilters, 
-//   clearFilters, 
-//   filterProducts, 
-//   sortProducts 
-// } from '../../filterSlice';
-// import { getUniqueValues, formatPrice } from '../../utils/helpers';
-// import { FaCheck } from 'react-icons/fa';
-
-// const Filters = () => {
-//   const dispatch = useDispatch();
-//   const {
-//     all_products,
-//     filters: {
-//       text,
-//       category,
-//       company,
-//       color,
-//       min_price,
-//       price,
-//       max_price,
-//       shipping,
-//     },
-//   } = useSelector((state) => state.filter);
-
-//   const categories = getUniqueValues(all_products, 'category');
-//   const companies = getUniqueValues(all_products, 'company');
-//   const colors = getUniqueValues(all_products, 'colors');
-
-//   const handleUpdateFilters = (e) => {
-//     let name = e.target.name;
-//     let value = e.target.value;
-
-//     if (name === 'category') {
-//       value = e.target.textContent;
-//     }
-
-//     if (name === 'color') {
-//       value = e.target.dataset.color;
-//     }
-
-//     if (name === 'price') {
-//       value = Number(value);
-//     }
-
-//     if (name === 'shipping') {
-//       value = e.target.checked;
-//     }
-
-//     dispatch(updateFilters({ name, value }));
-//     dispatch(filterProducts());
-//     dispatch(sortProducts());
-//   };
-
-//   return (
-//     <Wrapper>
-//       <div className='content'>
-//         <form onSubmit={(e) => e.preventDefault()}>
-//           <div className='form-control'>
-//             <input
-//               type='text'
-//               name='text'
-//               placeholder='search'
-//               className='search-input'
-//               value={text}
-//               onChange={handleUpdateFilters}
-//             />
-//           </div>
-//           <div className='form-control'>
-//             <h5>category</h5>
-//             <div>
-//               {categories.map((c, index) => (
-//                 <button
-//                   key={index}
-//                   onClick={handleUpdateFilters}
-//                   type='button'
-//                   name='category'
-//                   className={`${
-//                     category === c.toLowerCase() ? 'active' : null
-//                   }`}
-//                 >
-//                   {c}
-//                 </button>
-//               ))}
-//             </div>
-//           </div>
-//           <div className='form-control'>
-//             <h5>company</h5>
-//             <select
-//               name='company'
-//               value={company}
-//               onChange={handleUpdateFilters}
-//               className='company'
-//             >
-//               {companies.map((c, index) => (
-//                 <option key={index} value={c}>
-//                   {c}
-//                 </option>
-//               ))}
-//             </select>
-//           </div>
-//           <div className='form-control'>
-//             <h5>colors</h5>
-//             <div className='colors'>
-//               {colors.map((c, index) => (
-//                 c === 'all' ? (
-//                   <button
-//                     key={index}
-//                     name='color'
-//                     onClick={handleUpdateFilters}
-//                     data-color='all'
-//                     className={`${
-//                       color === 'all' ? 'all-btn active' : 'all-btn'
-//                     }`}
-//                   >
-//                     all
-//                   </button>
-//                 ) : (
-//                   <button
-//                     key={index}
-//                     name='color'
-//                     style={{ background: c }}
-//                     className={`${
-//                       color === c ? 'color-btn active' : 'color-btn'
-//                     }`}
-//                     data-color={c}
-//                     onClick={handleUpdateFilters}
-//                   >
-//                     {color === c ? <FaCheck /> : null}
-//                   </button>
-//                 )
-//               ))}
-//             </div>
-//           </div>
-//           <div className='form-control'>
-//             <h5>price</h5>
-//             <p className='price'>{formatPrice(price)}</p>
-//             <input
-//               type='range'
-//               name='price'
-//               min={min_price}
-//               max={max_price}
-//               onChange={handleUpdateFilters}
-//               value={price}
-//             />
-//           </div>
-//           <div className='form-control shipping'>
-//             <label htmlFor='shipping'> free shipping</label>
-//             <input
-//               type='checkbox'
-//               name='shipping'
-//               id='shipping'
-//               onChange={handleUpdateFilters}
-//               checked={shipping}
-//             />
-//           </div>
-//         </form>
-//         <button type='button' className='clear-btn' onClick={() => dispatch(clearFilters())}>
-//           clear filters
-//         </button>
-//       </div>
-//     </Wrapper>
-//   );
-// };
-
-// export default Filters;

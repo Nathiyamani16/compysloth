@@ -17,5 +17,11 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 'off'
   },
 }
+// module.exports = {
+//   extends: [
+//       'react-app'
+//   ]
+// }

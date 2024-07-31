@@ -31,6 +31,8 @@ const SingleProduct = () => {
 
   console.log(product);
 
+  
+
   const USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
