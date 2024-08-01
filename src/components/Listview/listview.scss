@@ -1,0 +1,37 @@
+@import '../../variable.scss';
+
+
+
+.list-con{
+    margin: 20px 30px;
+    display: grid;
+    grid-template-columns: 350px 630px;
+    .left-sec{
+        h5{
+            color: $grey-1;
+            text-transform: capitalize;
+            font-size: 2rem;
+        }
+        .price-list{
+            color: $primary-5;
+        }
+        p{
+            color: $grey-3;
+            display: -webkit-box;
+            font-size: 17px;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 570px;
+      
+        }
+        .list-butt{
+            border: none;
+            background:$primary-5;
+            color: $white;
+            border-radius: $radius;
+            font-size: 10px;
+        }
+    }
+}

@@ -2,7 +2,6 @@
 
 
 .add-to-cart {
-
   .color-sec {
     display: grid;
     grid-template-columns: 125px 1fr;
@@ -35,28 +34,31 @@
       justify-content: start;
     }
 
-     .active {
+    .active {
       opacity: 2;
 
     }
-    .tick{
+
+    .tick {
       font-size: 0.75rem;
       color: $white;
     }
   }
+
   .add-btn {
     width: 200px;
     margin-top: 10px;
     text-align: center;
-    background:$primary-5;
+    background: $primary-5;
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     text-transform: uppercase;
     text-decoration: none;
-    transition: background 0.3s ease;
-    
+    transition: $transition;
+
   }
+
   .btn-container {
     .amount-btns {
       display: grid;

@@ -1,17 +1,10 @@
-/* eslint-disable react/prop-types */
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaCheck, FaPlus, FaMinus } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
-import { addToCart } from "../../Redux/cartSlice"
 import './addcart.scss';
 
-// eslint-disable-next-line react/prop-types
-const AddToCart = ({ product }) => {
-  const dispatch = useDispatch();
+const AddToCart = ({ product, onAddToCart }) => {
   const { id, stock, colors } = product;
-
   const [mainColor, setMainColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
 
@@ -36,7 +29,7 @@ const AddToCart = ({ product }) => {
   };
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ id, color: mainColor, amount, product }));
+    onAddToCart({ id, color: mainColor, amount, product });
   };
 
   return (
@@ -51,7 +44,7 @@ const AddToCart = ({ product }) => {
               className={`${mainColor === color ? 'color-btn-single active' : 'color-btn-single'}`}
               onClick={() => setMainColor(color)}
             >
-              {mainColor === color ? <FaCheck  className='tick'/> : null}
+              {mainColor === color ? <FaCheck className='tick' /> : null}
             </button>
           ))}
         </div>
@@ -77,39 +70,4 @@ const AddToCart = ({ product }) => {
     </div>
   );
 };
-
 export default AddToCart;
-
-
-// // src/components/AddToCart.scss
-// .add-to-cart {
-//     .colors {
-//       // Your color button styles
-//     }
-//     .btn-container {
-//       .amount-btns {
-//         display: grid;
-//         width: 140px;
-//         justify-items: center;
-//         grid-template-columns: repeat(3, 1fr);
-//         align-items: center;
-  
-//         .amount-btn {
-//           background: transparent;
-//           border-color: transparent;
-//           cursor: pointer;
-//           padding: 1rem 0;
-//           width: 2rem;
-//           height: 1rem;
-//           display: flex;
-//           align-items: center;
-//           justify-content: center;
-//         }
-  
-//         .amount {
-//           margin-bottom: 0;
-//         }
-//       }
-//     }
-//   }
-  

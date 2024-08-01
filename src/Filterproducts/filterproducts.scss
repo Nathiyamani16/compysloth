@@ -1,21 +1,19 @@
 @import "../variable.scss";
 
-
 .side-filter-con {
-
     position: sticky;
+    top: 30px;
+    height: fit-content;
 
-    .search-bar {
+    .search-con {
         border: none;
-        background: $grey-9;
+        background: $grey-10;
         border-radius: $radius;
         width: 100%;
         height: 35px;
         padding: 0.5rem;
-        font-size: medium;
-    }
-    .search-input{
-        font-size: 14px;
+        font-size: small;
+
     }
 
     .category {
@@ -29,14 +27,15 @@
 
             text-align: left;
         }
-       .button-ca {
+
+        .button-ca {
             border: none;
             background: none;
             text-transform: capitalize;
             color: $grey-5;
             text-align: left;
         }
-}
+    }
 
     .company-con {
 
@@ -51,11 +50,53 @@
 
     }
 
-    .colors-con {
-        color: $black;
-        text-transform: capitalize;
-        font-weight: bold;
+    .color-sec {
+        -webkit-box-align: center;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .co {
+
+            color: $black;
+            text-transform: capitalize;
+            font-weight: bold;
+            border: none;
+
+        }
+
+        .color-btn-single {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background: rgb(34, 34, 34);
+            margin-right: 0.5rem;
+            border: none;
+            cursor: pointer;
+            opacity: 0.5;
+            outline: none;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: start;
+        }
+
+        .active {
+            opacity: 2;
+
+        }
+
+        .tick {
+            font-size: 0.75rem;
+            color: $white;
+        }
+
+    }
+
+    .clear-btn {
+        background: red;
         border: none;
-}
+        color: $white;
+        border-radius: $radius;
+    }
 
 }

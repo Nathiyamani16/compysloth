@@ -1,5 +1,4 @@
 import { GiCompass, GiDiamondHard, GiStabbedNote } from "react-icons/gi";
-
 export const services = [
   {
     id: 1,

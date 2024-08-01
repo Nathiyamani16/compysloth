@@ -1,6 +1,3 @@
-
-
-
 const feature_products = [
   
   {
@@ -51,48 +48,3 @@ shipping: true
   
 ];
 export default feature_products
-
-
-
-
-
-// const feature_products = [
-//   {
-//     id: "recNZ0koOqEmilmoz",
-//     stock: 10,
-//     price: 59999,
-//     shipping: true,
-//     featured: true,
-//     colors: ["#000", "#ff0000"],
-//     category: "living room",
-//     images: [
-//       {
-//         id: "attub6EG88kJKuYs8",
-//         width: 1000,
-//         height: 667,
-//         url: "https://www.course-api.com/images/store/product-7.jpeg",
-//         filename: "product-4.jpeg",
-//         size: 49641,
-//         type: "image/jpeg",
-//         thumbnails: {
-//           small: {
-//             url: "https://www.course-api.com/images/store/product-7.jpeg",
-//             width: 54,
-//             height: 36
-//           },
-//           large: {
-//             url: "https://www.course-api.com/images/store/product-7.jpeg",
-//             width: 768,
-//             height: 512
-//           },
-//           full: {
-//             url: "https://www.course-api.com/images/store/product-7.jpeg",
-//             width: 3000,
-//             height: 3000
-//           }
-//         }
-//       }
-//     ]
-//   }
-// ];
-// export default feature_products

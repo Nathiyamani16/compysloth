@@ -3,19 +3,7 @@ import { NavLink } from "react-router-dom";
 import "../Header/header.scss"
 import Navbar from "./navbar";
 
-
-
-
 const Header = ({ name }) => {
-
-
-  const testFunticon = () => {
-
-  }
-  useEffect(() => {
-    testFunticon()
-  }, [])
-
   return (
     <>
       <div className="main-container">
@@ -26,7 +14,6 @@ const Header = ({ name }) => {
           <Navbar />
         </div>
       </div>
-
     </>
   );
 };

@@ -10,70 +10,70 @@ const Navbar = () => {
 
   return (
     <>
-    <div className="navbar-conatiner">
-    <Nav>
-      <div className={menuIcon ? "navbar active" : "navbar"}>
-        <ul className="navbar-lists">
-          <li>
-            <NavLink
-              to="/"
-              className="navbar-link  ho"
-              onClick={() => setMenuIcon(false)}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className="navbar-link ho "
-              onClick={() => setMenuIcon(false)}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/products"
-              className="navbar-link ho"
-              onClick={() => setMenuIcon(false)}>
-              Products
-            </NavLink>
-          </li>
-          
-        </ul>
-        <ul className="navbar-login">
+      <div className="navbar-conatiner">
+        <Nav>
+          <div className={menuIcon ? "navbar active" : "navbar"}>
+            <ul className="navbar-lists">
+              <li>
+                <NavLink
+                  to="/"
+                  className="navbar-link  ho"
+                  onClick={() => setMenuIcon(false)}>
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  className="navbar-link ho "
+                  onClick={() => setMenuIcon(false)}>
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/products"
+                  className="navbar-link ho"
+                  onClick={() => setMenuIcon(false)}>
+                  Products
+                </NavLink>
+              </li>
 
-        <li>
-            <NavLink to="/cart" className="navbar-link cart-trolly-">
-            Cart
-              <FaShoppingCart className="cart-trolley" />
-              <span className="cart-total--item">0</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/"
-              className="navbar-link "
-              onClick={() => setMenuIcon(false)}>
-              LOGIN
-            </NavLink>
-          </li>
-      
-        </ul>
-        <div className="res-navbar-btn">
-          <CgMenu
-            name="menu-outline"
-            className="mobile-nav-icon"
-            onClick={() => setMenuIcon(true)}
-          />
-          <CgClose
-            name="close-outline"
-            className="res-nav-icon close-outline"
-            onClick={() => setMenuIcon(false)}
-          />
-        </div>
+            </ul>
+            <ul className="navbar-login">
+
+              <li>
+                <NavLink to="/cart" className="navbar-link cart-trolly-">
+                  Cart
+                  <FaShoppingCart className="cart-trolley" />
+                  <span className="cart-total--item">0</span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/"
+                  className="navbar-link "
+                  onClick={() => setMenuIcon(false)}>
+                  LOGIN
+                </NavLink>
+              </li>
+
+            </ul>
+            <div className="res-navbar-btn">
+              <CgMenu
+                name="menu-outline"
+                className="mobile-nav-icon"
+                onClick={() => setMenuIcon(true)}
+              />
+              <CgClose
+                name="close-outline"
+                className="res-nav-icon close-outline"
+                onClick={() => setMenuIcon(false)}
+              />
+            </div>
+          </div>
+        </Nav>
       </div>
-    </Nav>
-    </div>
     </>
   );
 };

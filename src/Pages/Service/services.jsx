@@ -1,12 +1,10 @@
-
 import {} from 'react';
 import "../Service/services.scss"
 import { services } from '../../utils/service';
 
 const Services = () => {
   return (
- 
-       <div className='section'>
+        <div className='section'>
       <div className='section-center'>
         <article className='header'>
           <h2>
@@ -32,9 +30,7 @@ const Services = () => {
           })}
         </div>
       </div>
-
       </div>
-
   );
 };
 

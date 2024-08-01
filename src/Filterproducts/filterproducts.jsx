@@ -1,107 +1,124 @@
-import { useEffect, useState } from 'react'
+// import { useEffect, useState } from 'react'
+import { useState } from "react"
 import "./filterproducts.scss"
+import { FaCheck } from 'react-icons/fa'
 
+const Filterproducts = ({ props }) => {
+  const {
+    setFilteredProducts = () => { },
+    products = [],
+    filters,
+    handleclear = () => { },
+    setFilters = () => { },
+    setSelectedFilters = () => { },
+    selectedfilter,
+  } = props
 
-const Filterproducts = () => {
-
-  const [filters, setFilteredProducts] = useState({
-    text: "",
-    colors: ["all"],
-    category: ["all"],
-    company: ["all"],
-    price: 0,
-
-  })
-
-  const [products, setProducts] = useState()
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch('https://www.course-api.com/react-store-products');
-      const data = await response.json();
-      setProducts(data);
-
-      const category = [...new Set(data?.map(curr => curr.category))];
-      const company = [...new Set(data?.map(curr => curr.company))];
-      const colors = [...new Set(data?.map(curr => curr.colors))];
-
-
-
-      setFilteredProducts((pre) => ({
-        ...pre,
-        category: ["all", ...category],
-        company: ["all", ...company],
-        colors: ["all", ...colors],
-        
-
-      }));
+  const handleFilterChange = (name, value) => {
+    let tempProducts = [...products]
+    switch (name) {
+      case 'text':
+        tempProducts = tempProducts.filter((curr) => curr.name.toLowerCase().includes(value));
+        break;
+      case 'category':
+        tempProducts = tempProducts?.filter((curr) => curr.category === value);
+        setSelectedFilters(pre => ({
+          ...pre,
+          category: value
+        }))
+        break;
+      case 'company':
+        tempProducts = tempProducts?.filter((curr) => curr.company === value);
+        break;
+      case 'colors':
+        tempProducts = tempProducts.filter((curr) => curr.colors.includes(value));
+        setSelectedFilters(pre => ({
+          ...pre,
+          colors: value
+        }))
+        break;
+      case 'price':
+        setFilters((pre) => ({
+          ...pre,
+          price: value
+        }))
+        tempProducts = tempProducts?.filter((curr) => curr.price <= value)
+        break;
+      default:
     }
-    fetchProducts();
-  }, [])
-
-
-
-  
-  const catagories = filters.category
-  const companyfilter = filters.company
-  const colorsproduct = filters.colors
-
-
-
+    setFilteredProducts(tempProducts)
+  }
   return (
     <>
       <div className='side-filter-con'>
         <div className='form-con'>
-          <div className='search-con'>
+          <div className='search-co'>
             <input
-              text='text'
-              type='text' 
-              className='search-input'/>
+              type='text' s
+              name='text'
+              onChange={(e) => handleFilterChange('text', e.target.value)}
+              placeholder='Search...'
+              className='search-con' />
           </div>
           <div className='category'>
             <h5>Category</h5>
-            {catagories.map((cur, idx) => (
+            {!!filters?.category?.length && filters?.category?.map((curr, idx) => (
               <button
                 key={idx}
                 type='button'
                 name='category'
-                className='button-ca' >
-                {cur}
-              </button>
-            ))}
+                className={`button-ca ${curr === selectedfilter?.category && "border-bottom"}`}
+                onClick={() => handleFilterChange('category', curr)}>
+                {curr}
+              </button>))}
           </div>
           <div className='company-con'>
             <h3>Company</h3>
-            <select>
-              {companyfilter.map((curr, idx) =>
-                <option
-                  key={idx}
-                  type="select"
-                  className='company-select'
-                >{curr}</option>
-              )}
+            <select className='company-select'
+              onChange={(e) => handleFilterChange('company', e.target.value)} >
+              {!!filters?.company?.length && filters?.company?.map((curr, idx) => (
+                <option key={idx} value={curr}>
+                  {curr}
+                </option>
+              ))}
             </select>
           </div>
-          <div className='colors-con'>
-            {colorsproduct.map((curr, idx) => {
-              console.log(curr);
-              <button
-                key={idx}
-                style={{ background: curr }}
-              >
-                {curr}
-
-              </button>
-            })}
+          <div className='color-sec '>
+            <h5>Colors</h5>
+            <div className="d-flex gap-1">
+              {!!filters?.colors?.length && filters?.colors?.map((curr, idx) =>
+                <button
+                  key={idx}
+                  style={{ background: curr, padding: "10px" }}
+                  name="colors"
+                  className='color-btn-single'
+                  onClick={() => handleFilterChange('colors', curr)}>
+                  {selectedfilter?.colors === curr ? <FaCheck className='tick-search' /> : null}
+                </button>)}
+            </div>
           </div>
-          <div>Price</div>
-
-
-
+          <div>
+            <label>Price</label>
+            <p>${filters?.price}</p>
+            <input
+              type='range'
+              name='price'
+              min='0'
+              value={filters?.price}
+              max={filters?.maxPrice}
+              onChange={(e) => handleFilterChange('price', e.target.value)}
+            />
+          </div>
+          <div>
+            <button
+              type="button"
+              className="clear-btn"
+              onClick={handleclear}
+            >Clear Filter</button>
+          </div>
         </div>
-
       </div>
     </>
-
   )
 }
 

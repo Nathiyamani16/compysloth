@@ -1,19 +1,16 @@
-/* eslint-disable react/prop-types */
-
-import {} from 'react'
+import { } from 'react'
 import "./firstpage.scss"
 import { Link } from 'react-router-dom'
 
-
-const FirstPage = ({pageName,product}) => {
+const FirstPage = ({ pageName, product }) => {
   return (
     <div className='sec-container'>
-    <div className='sec-pro'>
-    <h3 className=''>
-    <Link to="/" className='text-name'>Home</Link>
-      {product && <Link to="/products" className='text-name'>/ Products</Link>}/ {pageName}
-    </h3>
-    </div>  
+      <div className='sec-pro'>
+        <h3 className=''>
+          <Link to="/" className='text-name'>Home</Link>
+          {product && <Link to="/products" className='text-name'>/ Products</Link>}/ {pageName}
+        </h3>
+      </div>
     </div>
   )
 }

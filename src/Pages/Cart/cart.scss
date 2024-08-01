@@ -6,7 +6,7 @@
         text-align: center;
         color: $grey-1;
         margin-bottom: 5rem;
-        
+       
     }
     .btn-fill{
         letter-spacing: 2px;
@@ -22,7 +22,7 @@
         border-radius: 0.25rem;
         text-transform: uppercase;
         text-decoration: none;
-        transition: background 0.3s ease;
+        transition:$transition;
     }
 
 }

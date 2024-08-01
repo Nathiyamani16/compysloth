@@ -1,6 +1,6 @@
-import {} from 'react';
-import Product from '../../components/Product/product'; 
-import feature_products from '../../utils/fe_products'; 
+import { } from 'react';
+import Product from '../../components/Product/product';
+import feature_products from '../../utils/fe_products';
 import { Link } from 'react-router-dom';
 import "../FetureProducts/feature.scss"
 
@@ -21,14 +21,10 @@ const Feature = () => {
             price={product.price}
           />
         ))}
-
-
       </div >
       <Link to="/products">
         <button className='bt'>ALL PRODUCTS</button>
       </Link>
-     
-      
     </div>
   );
 };

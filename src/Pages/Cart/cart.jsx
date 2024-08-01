@@ -7,14 +7,12 @@ const Cart = () => {
         <div className='cart-con'>
             <div className='empty-page'>
                 <h1>Your cart is empty</h1>
-          
-            <Link
-                to="/product"
-                className="btn-fill">
-                FILL IT
-            </Link>
+                <Link
+                    to="/product"
+                    className="btn-fill">
+                    FILL IT
+                </Link>
             </div>
-
         </div>
     )
 }
