@@ -1,15 +1,20 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaCheck, FaPlus, FaMinus } from 'react-icons/fa';
 import './addcart.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { addCart } from '../../Redux/productSlice';
 
-const AddToCart = ({ product, onAddToCart }) => {
+const AddToCart = ({ product}) => {
   const { id, stock, colors } = product;
   const [mainColor, setMainColor] = useState(colors[0]);
-  const [amount, setAmount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+  const navigate=useNavigate()
+  // const {cartProduct:product}=useSelector(state => state.products)
 
   const increase = () => {
-    setAmount((preAmt) => {
+    setQuantity((preAmt) => {
       let temAmt = preAmt + 1;
       if (temAmt > stock) {
         temAmt = stock;
@@ -19,7 +24,7 @@ const AddToCart = ({ product, onAddToCart }) => {
   };
 
   const decrease = () => {
-    setAmount((preAmt) => {
+    setQuantity((preAmt) => {
       let temAmt = preAmt - 1;
       if (temAmt < 1) {
         temAmt = 1;
@@ -29,7 +34,8 @@ const AddToCart = ({ product, onAddToCart }) => {
   };
 
   const handleAddToCart = () => {
-    onAddToCart({ id, color: mainColor, amount, product });
+    dispatch(addCart({ product, color: mainColor, quantity: quantity ,id:id}))
+    navigate("/cart")
   };
 
   return (
@@ -37,35 +43,34 @@ const AddToCart = ({ product, onAddToCart }) => {
       <div className='color-sec'>
         <span className='co'>colors : </span>
         <div>
-          {colors.map((color, index) => (
+          {colors.map((curr, index) => (
             <button
               key={index}
-              style={{ background: color }}
-              className={`${mainColor === color ? 'color-btn-single active' : 'color-btn-single'}`}
-              onClick={() => setMainColor(color)}
+              style={{ background: curr }}
+              className={`${mainColor === curr ? 'color-btn-single active' : 'color-btn-single'}`}
+              onClick={() => setMainColor(curr)}
             >
-              {mainColor === color ? <FaCheck className='tick' /> : null}
+              {mainColor === curr ? <FaCheck className='tick' /> : null}
             </button>
           ))}
         </div>
       </div>
       <div className='btn-container'>
-        <div className='amount-btns'>
-          <button type='button' className='amount-btn' onClick={decrease}>
+        <div className='am-btns'>
+          <button type='button' className='am-btn' onClick={decrease}>
             <FaMinus />
           </button>
-          <h2 className='amount'>{amount}</h2>
-          <button type='button' className='amount-btn' onClick={increase}>
+          <h2 className='am'>{quantity}</h2>
+          <button type='button' className='am-btn' onClick={increase}>
             <FaPlus />
           </button>
         </div>
-        <Link
-          to='/cart'
+        <button
           className='add-btn'
-          onClick={handleAddToCart}
-        >
+          onClick={handleAddToCart} >
           Add to cart
-        </Link>
+        </button>
+
       </div>
     </div>
   );

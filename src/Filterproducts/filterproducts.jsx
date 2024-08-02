@@ -54,7 +54,7 @@ const Filterproducts = ({ props }) => {
         <div className='form-con'>
           <div className='search-co'>
             <input
-              type='text' s
+              type='text' 
               name='text'
               onChange={(e) => handleFilterChange('text', e.target.value)}
               placeholder='Search...'

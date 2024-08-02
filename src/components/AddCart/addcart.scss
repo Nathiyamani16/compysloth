@@ -60,7 +60,7 @@
   }
 
   .btn-container {
-    .amount-btns {
+    .am-btns {
       display: grid;
       width: 140px;
       justify-items: center;
@@ -68,7 +68,7 @@
       align-items: center;
       margin-bottom: 20px;
 
-      .amount-btn {
+      .am-btn {
         background: transparent;
         border-color: transparent;
         cursor: pointer;
@@ -80,7 +80,7 @@
         justify-content: center;
       }
 
-      .amount {
+      .am {
         margin-bottom: 0;
       }
     }

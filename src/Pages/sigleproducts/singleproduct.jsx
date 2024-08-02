@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSingleProduct } from '../../Redux/productSlice';
@@ -7,22 +7,20 @@ import Stars from '../../components/Starts/star';
 import AddToCart from '../../components/AddCart/addcart';
 import axios from 'axios';
 import "../sigleproducts/singleproduct.scss"
-
 import FirstPage from '../firstpage/firstpage';
 
 const SingleProduct = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
-  const { single_product: product } = useSelector(state => state.products);
+  const [product, setProduct] = useState({})
+
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await axios.get(`https://www.course-api.com/react-store-single-product?id=${id}`);
-      dispatch(setSingleProduct(response.data));
+      setProduct(response?.data);
     }
     fetchProduct();
+  }, [id]);
 
-  }, [id, dispatch]);
-  console.log(product);
   const USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',

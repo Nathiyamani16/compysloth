@@ -1,11 +1,11 @@
 @import '../../variable.scss';
 
 .cart-con{
-    .empty-page{
+    .cartemp-page{
         margin-top: 5rem;
         text-align: center;
         color: $grey-1;
-        margin-bottom: 5rem;
+        margin-bottom: 1rem;
        
     }
     .btn-fill{
@@ -24,5 +24,122 @@
         text-decoration: none;
         transition:$transition;
     }
+    
+
+}
+.main-table-con{
+    // align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+
+.table-con{
+    width: 80%;
+    display: inline-table;
+    .price-list{
+    color: $primary-5;
+    }
+    .headcart-item{
+      color: $grey-6;
+   .cart-line{
+    border-bottom: 2px solid $grey-6;
+   }
+    }
+  
+
+    .text-img-con{
+        display: flex;
+        align-items: center;
+        // grid-template-columns: 100px 200px;
+
+    }
+    .data-rows{
+        // display: grid;
+
+        // grid-template-columns: repeat(5, 1fr);
+        // align-items: center;
+        // grid-template-rows: 75px;
+        // /* width: 100%; */
+        // column-gap: 30%;
+    }
+    img{
+       width: 100px;
+        height: 100px;
+    }
+    .name-cart{
+        text-transform: capitalize;
+        text-align: center;
+         margin-left: 10px;
+
+    }
+    .button-cart{
+        .cart-button{
+            border: none; 
+            background: none;
+            font-size: 20px;
+             margin: 10px;
+        }
+        span{
+            font-size: 20px;
+            font-weight: 800;
+            color: $grey-1;
+         }
+    }
+   
+   .detele-btn button{
+    border: none;
+    color: $white;
+    background:red;
+    border-radius: $radius;
+    align-items: center;
+    padding: 0.20rem 0.5rem;
+   }
+
+}
+.shoping-btn{
+       text-align: left;
+    .btn-fi{
+        letter-spacing: 2px;
+        justify-items: left;
+        display: inline-block;
+        font-size: small;
+        margin-top: 10px;
+        text-align: center;
+        background:$primary-5;
+        border: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition:$transition;
+        margin-left: 5rem;
+    }
+}
+    .btn2{
+        letter-spacing: 2px;
+        justify-items: left;
+        display: inline-block;
+        font-size: small;
+   
+        text-align: center;
+        background:$black;
+        border: none;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition:$transition;
+        margin-right: 5rem;
+    }
+
+
+   
+   
+
+
+
+
 
 }
