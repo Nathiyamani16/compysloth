@@ -6,7 +6,7 @@ import '../Listview/listview.scss'
 const USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
-  });
+});
 
 const Listview = ({ name, image, id, price, description }) => {
 
@@ -21,11 +21,11 @@ const Listview = ({ name, image, id, price, description }) => {
                     <h5>{name}</h5>
                     <p className='price-list'>{USDollar.format(price)}</p>
                     <p>{description}</p>
-                   <Link to={`/product/${id}`}>
-                   <button className='list-butt'>DETAILS</button>
-                   </Link>
+                    <Link to={`/product/${id}`}>
+                        <button className='list-butt'>DETAILS</button>
+                    </Link>
                 </div>
-              
+
             </div>
         </>
     );

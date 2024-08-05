@@ -20,12 +20,16 @@
         display: inline-grid;
         text-decoration: none;
         border: none;
-        margin: 20px;
+        line-height: 2;
+
 
         h5 {
             font-size: medium;
-
-            text-align: left;
+           color: $grey-1;
+            margin-top: 20px;
+            margin-left: 5px;
+            font-weight: 600;
+            letter-spacing: 2px;
         }
 
         .button-ca {
@@ -34,69 +38,112 @@
             text-transform: capitalize;
             color: $grey-5;
             text-align: left;
+            font-weight: 400;
+            font-size: 14px;
         }
     }
 
     .company-con {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
 
         h3 {
             text-align: left;
             font-size: medium;
+            color: $grey-1;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .company-select {
+            background: $grey-10;
+            border: none;
+            border-radius: $radius;
+            height: 25px;
         }
 
         option {
             width: 200px;
+            border: none;
         }
 
     }
 
     .color-sec {
-        -webkit-box-align: center;
+          color: $grey-1;
         align-items: center;
         margin-bottom: 2rem;
-
+        h5{
+            font-size: medium;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
         .co {
-
             color: $black;
             text-transform: capitalize;
             font-weight: bold;
             border: none;
-
         }
 
         .color-btn-single {
             width: 1.2rem;
             height: 1.2rem;
             border-radius: 50%;
-            background: rgb(34, 34, 34);
-            margin-right: 0.5rem;
+            background: rgb(12, 10, 10);
             border: none;
             cursor: pointer;
             opacity: 0.5;
             outline: none;
-            -webkit-box-align: center;
-            align-items: center;
-            -webkit-box-pack: center;
-            justify-content: start;
+
+            .tick-search {
+                color:$white;
+                vertical-align: text-top;
+                font-size: 10px;
+            }
         }
 
         .active {
-            opacity: 2;
+            opacity: 3;
 
         }
-
-        .tick {
-            font-size: 0.75rem;
-            color: $white;
-        }
+       
 
     }
+    .price-con{
+   
+        label{
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: $grey-1;
+            margin-bottom: 1rem;
+        }
+        p{
+            color: $grey-2;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+        }
+    }
+    .checkbox-1{
+      label{
+        margin-top: 2rem;
+        color: $grey-1;
+      }
+      .checkbox{
+    margin-left: 20px;
+      }
+    }
+
+
 
     .clear-btn {
-        background: red;
+        margin-top: 3rem;
+        background: $red-dark;
         border: none;
         color: $white;
         border-radius: $radius;
+        width: 100px;
     }
 
 }

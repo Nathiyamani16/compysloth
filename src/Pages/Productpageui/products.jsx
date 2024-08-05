@@ -64,29 +64,31 @@ const Products = () => {
         <div className='container-grid'>
           <FilterProducts props={props} />
           <div className='page-top'>
-            <div className='icons-view  btn-container'>
-              <button onClick={() => setView('grid')}>
-                <BsFillGridFill className='icons-style' />
-              </button>
-              <button onClick={() => setView('list')} >
-                <BsList className='icons-style' />
-              </button>
-            </div>
-            <p className='length-pro'>{products.length} Products Found</p>
-            <hr />
-            <form>
-              <label htmlFor='sort'>Sort By</label>
-              <select
-                name="sort"
-                id='sort'
-                className='sort-in'>
-                <option value="price-lowest">Price(Lowest)</option>
-                <option value="price-highest">Price(highest)</option>
-                <option value="name-a-z">Name (A-Z)</option>
-                <option value="name-z-a">Name (Z-A)</option>
-              </select>
-            </form>
+            <div className='top-con'>
+              <div className='icons-view  btn-container'>
+                <button onClick={() => setView('grid')}>
+                  <BsFillGridFill className='icons-style' />
+                </button>
+                <button onClick={() => setView('list')} >
+                  <BsList className='icons-style' />
+                </button>
+              </div>
+              <p className='length-pro'>{products.length} Products Found</p>
+              <hr />
+              <form>
+                <label htmlFor='sort'>Sort By</label>
+                <select
+                  name="sort"
+                  id='sort'
+                  className='sort-in'>
+                  <option value="price-lowest">Price(Lowest)</option>
+                  <option value="price-highest">Price(highest)</option>
+                  <option value="name-a-z">Name (A-Z)</option>
+                  <option value="name-z-a">Name (Z-A)</option>
+                </select>
+              </form>
 
+            </div>
             <div className='productsshow-con'>
               {view === 'grid' &&
                 <div className='product-grid'>
@@ -114,8 +116,8 @@ const Products = () => {
                   />
                 ))}
               </div>}
-
             </div>
+
           </div>
         </div>
       </div>

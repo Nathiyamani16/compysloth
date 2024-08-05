@@ -44,6 +44,12 @@ const Filterproducts = ({ props }) => {
         }))
         tempProducts = tempProducts?.filter((curr) => curr.price <= value)
         break;
+        // case 'shipping':
+        //    setFilters((pre)=>({
+        //     ...pre,
+        //     shipping:value
+        //    }))
+        //    tempProducts = tempProducts.filter((curr) => curr.shipping);
       default:
     }
     setFilteredProducts(tempProducts)
@@ -54,7 +60,7 @@ const Filterproducts = ({ props }) => {
         <div className='form-con'>
           <div className='search-co'>
             <input
-              type='text' 
+              type='text'
               name='text'
               onChange={(e) => handleFilterChange('text', e.target.value)}
               placeholder='Search...'
@@ -89,15 +95,16 @@ const Filterproducts = ({ props }) => {
               {!!filters?.colors?.length && filters?.colors?.map((curr, idx) =>
                 <button
                   key={idx}
-                  style={{ background: curr, padding: "10px" }}
+                  style={{ background: curr}}
+                  className={`${selectedfilter?.colors === curr ? 'color-btn-single active' : 'color-btn-single'}`}
                   name="colors"
-                  className='color-btn-single'
+                  // className='color-btn-single'
                   onClick={() => handleFilterChange('colors', curr)}>
                   {selectedfilter?.colors === curr ? <FaCheck className='tick-search' /> : null}
                 </button>)}
             </div>
           </div>
-          <div>
+          <div className="price-con">
             <label>Price</label>
             <p>${filters?.price}</p>
             <input
@@ -106,9 +113,17 @@ const Filterproducts = ({ props }) => {
               min='0'
               value={filters?.price}
               max={filters?.maxPrice}
-              onChange={(e) => handleFilterChange('price', e.target.value)}
-            />
+              onChange={(e) => handleFilterChange('price', e.target.value)} />
           </div>
+            <div className="checkbox-1">
+              <label>Free Shipping</label>
+              <input
+              className="checkbox"
+              type="checkbox"
+                value={false}
+              onChange={(e) => handleFilterChange('shipping', e.target.value)}
+              />
+            </div>
           <div>
             <button
               type="button"

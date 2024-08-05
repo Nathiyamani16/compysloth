@@ -18,7 +18,7 @@ const productsSlice = createSlice({
     },
     addCart: (state, { payload }) => {
       const priviousCart = [...state.cartproduct];
-      const isExistedIndex = priviousCart.findIndex((curr) => curr.id === payload?.id)
+      const isExistedIndex = priviousCart.findIndex((curr) => (curr.id === payload?.id && curr.color === payload?.color))
       let newCart = {
         id: payload?.product?.id,
         name: payload?.product?.name,
@@ -27,6 +27,7 @@ const productsSlice = createSlice({
         price: payload?.product?.price,
         subtotal: Number(payload?.product?.price) * payload?.quantity,
         color: payload?.color,
+      
       }
       if (isExistedIndex === -1) {
         state.cartproduct = [newCart, ...priviousCart]
@@ -42,7 +43,7 @@ const productsSlice = createSlice({
     },
     incQuantity: (state, { payload }) => {
       const priviousCart = [...state.cartproduct];
-      const isExistedIndex = priviousCart.findIndex((curr) => curr.id === payload?.id)
+      const isExistedIndex = priviousCart.findIndex((curr) =>(curr.id === payload?.id && curr.color === payload?.color))
 
       const updatedCart = priviousCart.map((item, index) =>
         index === isExistedIndex
@@ -54,7 +55,7 @@ const productsSlice = createSlice({
     },
     decrQuantity: (state, { payload }) => {
       const priviousCart = [...state.cartproduct];
-      const isExistedIndex = priviousCart.findIndex((curr) => curr.id === payload?.id)
+      const isExistedIndex = priviousCart.findIndex((curr) =>(curr.id === payload?.id && curr.color === payload?.color))
 
       const updatedCart = priviousCart.map((item, index) =>
         index === isExistedIndex
@@ -66,10 +67,13 @@ const productsSlice = createSlice({
     },
     removeProduct: (state, { payload }) => {
       const priviousCart = [...state.cartproduct];
-      const updatedCart = priviousCart.filter((curr) => curr.id !== payload?.id);
+      const updatedCart = priviousCart.filter((curr) => !(curr.id === payload?.id && curr.color === payload?.color));
 
       state.cartproduct = updatedCart;
     },
+    clearCart:(state)=>{
+      state.cartproduct= []
+    }
 
 
   },
@@ -80,7 +84,8 @@ export const {
   addCart,
   incQuantity,
   decrQuantity,
-  removeProduct
+  removeProduct,
+  clearCart
 } = productsSlice.actions;
 
 export default productsSlice.reducer;

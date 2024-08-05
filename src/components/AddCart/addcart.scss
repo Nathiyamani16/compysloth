@@ -14,13 +14,13 @@
       color: $black;
       text-transform: capitalize;
       font-weight: bold;
-      border: none;
+      // border: none;
 
     }
 
     .color-btn-single {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.25rem;
+      height: 1.25rem;
       border-radius: 50%;
       background: rgb(34, 34, 34);
       margin-right: 0.5rem;
@@ -40,8 +40,9 @@
     }
 
     .tick {
-      font-size: 0.75rem;
-      color: $white;
+      vertical-align:text-top;
+      font-size: 0.65rem;
+      color: #fff;
     }
   }
 
@@ -56,6 +57,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: $transition;
+    border: none;
 
   }
 

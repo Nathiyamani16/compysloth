@@ -11,68 +11,75 @@
 
 
         .page-top {
-            display: grid;
-            grid-template-columns: 100px 140px 520px 400px;
             margin-bottom: 20px;
 
-            .productsshow-con {
-                display: grid;
-            }
-
-            img {
-                width: 300px;
-                height: 200px;
-                object-fit: cover;
-            }
-
-            .btn-container {
+            .top-con {
                 display: flex;
-                gap: 10px;
+                gap: 20px;
+            }
 
-                button {
-                    background: transparent;
-                    border: 1px solid $black;
-                    color: $black;
-                    width: 1.5rem;
-                    border-radius: $radius;
-                    height: 1.5rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
+        }
+    
 
-                    svg {
-                        font-size: 1rem;
-                    }
-                }
+    .productsshow-con {
+        display: grid;
+    }
 
-                .active {
-                    background: $black;
-                    color: $white;
-                }
+    img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        margin-left: 0;
+        padding-top: 0;
+    }
 
-                .sort-in {
-                    border-color: transparent;
-                    font-size: 1rem;
-                    text-transform: capitalize;
-                    padding: 0.25rem 0.5rem;
-                }
+    .btn-container {
+        display: flex;
+        gap: 10px;
 
-                label {
-                    font-size: 1rem;
-                    text-transform: capitalize;
-                }
+        button {
+            background: transparent;
+            border: 1px solid $black;
+            color: $black;
+            width: 1.5rem;
+            border-radius: $radius;
+            height: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
 
-
-                p {
-                    text-transform: capitalize;
-                    gap: 10px;
-                    color: $grey-9;
-                }
-
+            svg {
+                font-size: 1rem;
             }
         }
+
+        .active {
+            background: $black;
+            color: $white;
+        }
+
+        .sort-in {
+            border-color: transparent;
+            font-size: 1rem;
+            text-transform: capitalize;
+            padding: 0.25rem 0.5rem;
+        }
+
+        label {
+            font-size: 1rem;
+            text-transform: capitalize;
+        }
+
+
+        p {
+            text-transform: capitalize;
+            gap: 10px;
+            color: $grey-9;
+        }
+
     }
+}
 }
 
 .length-pro {

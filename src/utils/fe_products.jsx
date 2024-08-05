@@ -1,50 +1,50 @@
 const feature_products = [
-  
+
   {
-    id: "recZkNf2kwmdBcqd0",
-    name: "accent chair",
-    price: 25999,
-    image: "https://www.course-api.com/images/store/product-1.jpeg",
+    id: "recNZ0koOqEmilmoz",
+    name: "entertainment center",
+    price: 59999,
+    image: "https://www.course-api.com/images/store/product-7.jpeg",
     colors: [
-      "#ff0000",
-      "#00ff00",
-      "#0000ff"
+      "#000",
+      "#ff0000"
     ],
-    company: "marcos",
+    company: "caressa",
+    description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
+    category: "living room",
+    shipping: true
+  },
+  {
+    id: "recrfxv3EwpvJwvjq",
+    name: "high-back bench",
+    price: 39999,
+    image: "https://www.course-api.com/images/store/product-8.jpeg",
+    colors: [
+      "#000",
+      "#00ff00"
+    ],
+    company: "ikea",
     description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
     category: "office",
     shipping: true
   },
+
   {
-        id: "recZkNf2kwmdBcqd0",
-    name: "accent chair",
-    price: 25999,
-    image: "https://www.course-api.com/images/store/product-1.jpeg",
+    id: "recoAJYUCuEKxcPSr",
+    name: "odern bookshelf",
+    price: 31999,
+    image: "https://www.course-api.com/images/store/product-11.jpeg",
     colors: [
+      "#ffb900",
       "#ff0000",
-      "#00ff00",
-      "#0000ff"
+      "#00ff00"
     ],
-    company: "marcos",
+    company: "caressa",
     description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
-    category: "office",
+    category: "kids",
     shipping: true
-  },
-  {
-    id: "recZkNf2kwmdBcqd0",
-name: "accent chair",
-price: 25999,
-image: "https://www.course-api.com/images/store/product-1.jpeg",
-colors: [
-  "#ff0000",
-  "#00ff00",
-  "#0000ff"
-],
-company: "marcos",
-description: "Cloud bread VHS hell of banjo bicycle rights jianbing umami mumblecore etsy 8-bit pok pok +1 wolf. Vexillologist yr dreamcatcher waistcoat, authentic chillwave trust fund. Viral typewriter fingerstache pinterest pork belly narwhal. Schlitz venmo everyday carry kitsch pitchfork chillwave iPhone taiyaki trust fund hashtag kinfolk microdosing gochujang live-edge",
-category: "office",
-shipping: true
-}
-  
+  }
+
+
 ];
 export default feature_products

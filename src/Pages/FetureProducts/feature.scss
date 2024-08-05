@@ -5,11 +5,13 @@
   margin-top: 0;
   padding: 40px 0px;
 
+
   .featured {
-    max-width: 1200px;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-between;
+    margin: 4rem auto;
+    display: grid;
+    width: 1100px;
+    grid-template-columns: repeat(3, 1fr);
+
 
   }
 
@@ -28,7 +30,11 @@
   }
 
   img {
+    width: 370px;
     height: 225px;
+    border-radius: $radius;
+    margin-left: 0;
+    padding-top: 0;
   }
 
   .bt {
