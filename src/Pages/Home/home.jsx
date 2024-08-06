@@ -7,7 +7,7 @@ import Feature from "../FetureProducts/feature";
 const Home = () => {
   return (
     <>
-      <div className="container">
+      <div className="container" style={{marginLeft:"3rem"}}>
         <div className="grid">
           <div className="hero-section-data">
             <h1 className="">Design Your

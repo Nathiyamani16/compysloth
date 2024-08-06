@@ -53,9 +53,15 @@
     letter-spacing: $spacing;
     padding: .375rem .75rem;
     text-transform: uppercase;
-    transition: $transition;
+  
 
 
   }
+  .bt:hover{
+    background-color: $primary-7;
+    cursor: pointer;
+    color: $primary-1;
+  }
+  
 
 }

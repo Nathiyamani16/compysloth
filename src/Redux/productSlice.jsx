@@ -27,6 +27,7 @@ const productsSlice = createSlice({
         price: payload?.product?.price,
         subtotal: Number(payload?.product?.price) * payload?.quantity,
         color: payload?.color,
+        stock:payload?.product?.stock
       
       }
       if (isExistedIndex === -1) {
@@ -47,7 +48,7 @@ const productsSlice = createSlice({
 
       const updatedCart = priviousCart.map((item, index) =>
         index === isExistedIndex
-          ? { ...item, quantity: item.quantity + 1, subtotal: (item.price || 0) * ((payload?.quantity) + 1 || 0) }
+          ? { ...item, quantity: item.quantity + 1, subtotal: (item.price || 1) * ((payload?.quantity) + 1 || 0) }
           : item
       );
       state.cartproduct = updatedCart;
@@ -89,7 +90,5 @@ export const {
 } = productsSlice.actions;
 
 export default productsSlice.reducer;
-
-
 
 

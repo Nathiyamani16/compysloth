@@ -14,7 +14,7 @@ const Filterproducts = ({ props }) => {
     selectedfilter,
   } = props
 
-  const handleFilterChange = (name, value) => {
+    const handleFilterChange = (name, value) => {
     let tempProducts = [...products]
     switch (name) {
       case 'text':
@@ -44,12 +44,16 @@ const Filterproducts = ({ props }) => {
         }))
         tempProducts = tempProducts?.filter((curr) => curr.price <= value)
         break;
-        // case 'shipping':
-        //    setFilters((pre)=>({
-        //     ...pre,
-        //     shipping:value
-        //    }))
-        //    tempProducts = tempProducts.filter((curr) => curr.shipping);
+          case 'shipping':
+            setFilters((prev) => ({
+              ...prev,
+              shipping: value
+            }));
+        
+            setSelectedFilterss(products.filter((product) => {
+              return !value || product.shipping;
+            })); 
+  
       default:
     }
     setFilteredProducts(tempProducts)
@@ -120,8 +124,8 @@ const Filterproducts = ({ props }) => {
               <input
               className="checkbox"
               type="checkbox"
-                value={false}
-              onChange={(e) => handleFilterChange('shipping', e.target.value)}
+              // checked={filters.shipping}
+              // onChange={(e)=> handleFilterChange('shipping',e.target.value)}
               />
             </div>
           <div>
@@ -138,5 +142,4 @@ const Filterproducts = ({ props }) => {
 }
 
 export default Filterproducts
-
 

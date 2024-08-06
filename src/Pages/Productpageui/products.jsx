@@ -21,6 +21,8 @@ const Products = () => {
   const [filters, setFilters] = useState(initalFilter)
   const [selectedfilter, setSelectedFilters] = useState(initalFilter)
   const [view, setView] = useState('grid')
+  const [sort, setSort] = useState("price-lowest")
+
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch('https://www.course-api.com/react-store-products');
@@ -42,6 +44,29 @@ const Products = () => {
     }
     fetchProducts();
   }, [])
+
+
+
+  const handleSortChange = (e) => {
+    const selectedSort = e.target.value;
+    setSort(selectedSort)
+
+    let sortProducts = [...filteredproducts]
+
+    if (selectedSort === 'price-lowest') {
+      sortProducts.sort((a, b) => a.price - b.price);
+    } else if (selectedSort === 'price-highest') {
+      sortProducts.sort((a, b) => b.price - a.price);
+    }
+    else if(selectedSort === 'name-a-z'){
+      sortProducts.sort((a,b)=> (a.name < b.name ? -1 : 1))
+    }
+    else if (selectedSort === 'name-z-a'){
+      sortProducts.sort((a,b)=> (a.name > b.name ? -1 : 1))
+
+    }
+    setFilteredProducts(sortProducts)
+  }
 
   const handleclear = () => {
     setFilteredProducts(products);
@@ -80,7 +105,10 @@ const Products = () => {
                 <select
                   name="sort"
                   id='sort'
-                  className='sort-in'>
+                  className='sort-in'
+                  value={sort}
+                  onChange={handleSortChange}
+                >
                   <option value="price-lowest">Price(Lowest)</option>
                   <option value="price-highest">Price(highest)</option>
                   <option value="name-a-z">Name (A-Z)</option>
@@ -126,6 +154,4 @@ const Products = () => {
   )
 }
 export default Products
-
-
 

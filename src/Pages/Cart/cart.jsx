@@ -105,7 +105,7 @@ const Cart = () => {
                                         <FaPlus />
                                     </button>
                                 </td>
-                                <td>${(curr.price * curr.quantity)}</td>
+                                <td className='quentity-subtotal'>${(curr.price * curr.quantity)}</td>
                                 <td className='detele-btn'><button onClick={() => handleRemove(curr.id, curr.color)}><MdDelete /></button></td>
                                 <td></td>
                             </tr>

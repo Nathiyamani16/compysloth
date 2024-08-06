@@ -47,6 +47,7 @@
       content: "";
       width: 80%;
       height: 50%;
+      margin-left: 4rem;
       background-color: #DECBC0;
       position: absolute;
       left: -10%;
@@ -59,13 +60,13 @@
 
   .img-style {
     min-width: 10rem;
-    height: 10rem;
-    width: 100%;
+    // height: 10rem;
+    width: 105%;
     height: 550px;
     position: relative;
     border-radius: 0.5rem;
     display: block;
-    object-fit: cover;
+    // object-fit: cover;
   }
   .hero-section-image .accent-img {
 
@@ -106,8 +107,8 @@
   }
 
   .button:hover {
-    background: #d1b6a8;
-    color: rgb(68, 60, 60);
+    background: $primary-7;
+    color:$primary-1;
   }
 
 }
