@@ -53,15 +53,89 @@
     letter-spacing: $spacing;
     padding: .375rem .75rem;
     text-transform: uppercase;
-  
+
 
 
   }
-  .bt:hover{
+
+  .bt:hover {
     background-color: $primary-7;
     cursor: pointer;
     color: $primary-1;
   }
-  
+
+
+}
+
+@media (max-width: 922px) {
+
+  .feature-con {
+    background-color: $grey-10;
+    margin-top: 0;
+    padding: 40px 0px;
+
+
+    .featured {
+      margin: 4rem auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      margin-left: 4rem;
+      margin-right: 4rem;
+
+
+    }
+
+    .title-con {
+      text-align: center;
+
+
+      .pro-under {
+        background: #ab7a5f;
+        height: .25rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 6rem;
+
+      }
+    }
+
+    img {
+      width: 530px;
+      height: 225px;
+      border-radius: $radius;
+      margin-left: 0;
+      padding-top: 0;
+    }
+
+    .bt {
+      display: ruby-text;
+      width: 148px;
+      margin: 0px auto;
+      border: none;
+      background: $primary-5;
+      border-radius: $radius;
+      color: $white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
+      color: $primary-10;
+      cursor: pointer;
+      font-size: .875rem;
+      font-weight: 400;
+      letter-spacing: $spacing;
+      padding: .375rem .75rem;
+      text-transform: uppercase;
+
+
+
+    }
+
+    .bt:hover {
+      background-color: $primary-7;
+      cursor: pointer;
+      color: $primary-1;
+    }
+
+
+  }
 
 }

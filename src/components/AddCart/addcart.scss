@@ -40,9 +40,11 @@
     }
 
     .tick {
-      vertical-align:text-top;
+      vertical-align: text-top;
       font-size: 0.65rem;
       color: #fff;
+      margin-right: 0;
+      text-align: center;
     }
   }
 
@@ -84,6 +86,59 @@
 
       .am {
         margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 922px) {
+
+  .add-to-cart {
+    .color-sec {
+      display: grid;
+      grid-template-columns: 125px 1fr;
+      -webkit-box-align: center;
+      align-items: center;
+      margin-bottom: 2rem;
+
+      .co {
+
+        color:$grey-1;
+        text-transform: capitalize;
+        font-weight: bold;
+         font-size: 14px;
+
+      }
+    }
+
+    .add-btn {
+      width: 150px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .btn-container {
+      .am-btns {
+
+        width: 130px;
+
+
+        .am-btn {
+          background: transparent;
+          border-color: transparent;
+          cursor: pointer;
+          padding: 1rem 0;
+          width: 2rem;
+          height: 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .am {
+          margin-bottom: 0;
+        }
       }
     }
   }

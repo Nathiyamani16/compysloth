@@ -147,3 +147,24 @@
     }
 
 }
+
+@media (max-width: 922px){
+    .side-filter-con {
+      position: relative;
+        top: 30px;
+
+    
+        .search-con {
+            border: none;
+            background: $grey-10;
+            border-radius: $radius;
+            width: 20%;
+            height: 35px;
+            padding: 0.5rem;
+            font-size: small;
+    
+        }
+    
+
+    }
+}

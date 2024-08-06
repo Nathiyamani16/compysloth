@@ -2,6 +2,7 @@
 
 .container {
   margin-bottom: 0;
+
   .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -31,6 +32,7 @@
       margin-bottom: 0;
     }
   }
+
   .hero-section-image {
     padding: 1rem 0;
     width: 100%;
@@ -68,6 +70,7 @@
     display: block;
     // object-fit: cover;
   }
+
   .hero-section-image .accent-img {
 
     position: absolute;
@@ -75,26 +78,11 @@
     left: 0px;
     width: 250px;
     transform: translateX(-50%);
-    border-radius:$radius;
-    
-  }
-
-  @media (max-width:922px) {
-    .grid {
-      gap: 10rem;
-    }
-
-    figure::after {
-      content: "";
-      width: 50%;
-      height: 100%;
-      left: 0;
-      top: 10%;
-      bottom: 10%;
-      background-color: #DECBC0;
-    }
+    border-radius: $radius;
 
   }
+
+
 
   .button {
     background: #ab7a5f;
@@ -108,7 +96,64 @@
 
   .button:hover {
     background: $primary-7;
-    color:$primary-1;
+    color: $primary-1;
   }
 
+  @media (max-width: 922px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-top:0;
+   
+    }
+
+    .hero-section-data {
+      padding-top: 1rem;
+      p {
+
+        font-size: 1rem;
+        width: max-content;
+        line-height: 2;
+        color: #829ab0;
+      }
+
+      h1 {
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 2rem;
+        color: #102a42;
+       
+      }
+
+      .intro-data {
+        margin-bottom: 0;
+      }
+    }
+
+    .img-style {
+      display: none;
+    }
+
+    .hero-section-image .accent-img {
+      display: none;
+
+    }
+
+    .button {
+      background: #ab7a5f;
+      border: none;
+      width: 30%;
+      height: 15%;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .button:hover {
+      background: $primary-7;
+      color: $primary-1;
+    }
+
+  }
 }

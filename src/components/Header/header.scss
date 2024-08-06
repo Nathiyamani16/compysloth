@@ -270,18 +270,17 @@ img {
             background-color: $white;
             transform: translateX(0);
             right: 0;
+            text-align: left;
         }
         .navbar-login.open {
-  
+          
             transform: translateX(0);
             right: 0;
             background-color: $white;
             display: flex;
-            flex-direction: column;
-              
-            .navbar-lists {
-                text-align: left;
-            }
+     
+            
+         
         }
 
         .res-navbar-btn {

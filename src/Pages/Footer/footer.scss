@@ -22,7 +22,37 @@ footer {
         line-height: 1.25;
     }
 
-    @media (min-width: 776px) {
-        flex-direction: row;
+
+}
+
+@media (max-width: 922px) {
+    footer{
+        
+    }
+}
+@media (min-width: 776px) {
+    footer {
+        height: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #222;
+        text-align: center;
+        letter-spacing: 2px;
+    
+        span {
+            color: #ab7a5f;
+            font-size: medium;
+        }
+    
+        h5 {
+            color: white;
+            margin: 0.1rem;
+            font-size: medium;
+            font-weight: 400;
+            text-transform: none;
+            line-height: 1.25;
+        }
     }
 }

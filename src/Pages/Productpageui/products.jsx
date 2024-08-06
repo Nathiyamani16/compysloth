@@ -99,7 +99,7 @@ const Products = () => {
                 </button>
               </div>
               <p className='length-pro'>{products.length} Products Found</p>
-              <hr />
+              <hr className='hr-line'/>
               <form>
                 <label htmlFor='sort'>Sort By</label>
                 <select

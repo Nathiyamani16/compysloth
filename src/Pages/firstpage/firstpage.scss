@@ -38,3 +38,44 @@
     }
 
 }
+@media (max-width: 922px) {
+
+.sec-container {
+    background: #eaded7;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #5f4435;
+    margin: 0 auto;
+
+    .sec-pro {
+
+        margin: 0 auto;
+        max-width: 1170px;
+        max-width: var(--max-width);
+        width: 90vw;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        text-transform: capitalize;
+        color: $primary-1;
+        font-weight: bold;
+    }
+
+    .text-name {
+        color: $primary-3;
+        padding: 0.5rem;
+        transition: $transition;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .text-name:hover {
+        color: $primary-1;
+    }
+
+}
+}

@@ -16,6 +16,9 @@
     width: 300px;
     height: 200px;
     object-fit: cover;
+    object-fit: cover;
+    margin-left: 0;
+    padding-top: 0;
   }
 }
 
@@ -87,4 +90,33 @@
     color: $primary-5;
     text-align: right;
   }
+}
+
+@media (max-width: 922px){
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+ align-items: center;
+
+}
+
+.imag-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  border-radius: $radius;
+  margin-left: 1rem;
+
+  img {
+
+    width: 550px;
+    height: 200px;
+    object-fit: cover;
+    object-fit: cover;
+    margin-left: 0;
+    padding-top: 0;
+  }
+}
+
 }
