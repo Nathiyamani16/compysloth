@@ -9,20 +9,34 @@ import Footer from './Pages/Footer/footer'
 import SingleProduct from './Pages/sigleproducts/singleproduct'
 import Cart from './Pages/Cart/cart'
 import Products from './Pages/Productpageui/products'
+import SideMenu from './components/Header/sidemenu'
 
 const App = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(prev => !prev);
+  };
   return (
     <>
-      <Header name={name} />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
-        <Route path='products' element={<Products />} />
-        <Route path="/product/:id" element={<SingleProduct />} />
-        <Route path='/cart' element={<Cart />} />
-      </Routes>
-      <Footer />
+
+      <SideMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      {!isMenuOpen &&
+        <>
+          <Header toggleMenu={toggleMenu} />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='about' element={<About />} />
+            <Route path='products' element={<Products />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path='/cart' element={<Cart />} />
+          </Routes>
+          <Footer />
+        </>
+      }
     </>
+
+
   )
 }
 export default App

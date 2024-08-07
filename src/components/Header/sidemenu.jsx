@@ -1,28 +1,15 @@
-
-
-
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { FaShoppingCart, FaUserPlus } from "react-icons/fa";
-import { CgMenu, CgClose } from "react-icons/cg";
-import "../Header/header.scss";
-import { useSelector } from "react-redux";
-
-const Navbar = ({ toggleMenu = () => { } }) => {
-
-  const { cartproduct: product } = useSelector(state => state.products);
-
-
-
-  const TotalQuantity = () => {
-    return product.reduce((curr, idx) => curr + idx.quantity, 0)
-  };
-  const totalQuantity = TotalQuantity();
+import React from 'react'
+import "./sidemenu.scss"
+import { NavLink } from 'react-router-dom'
+import { FaShoppingCart, FaUserPlus } from 'react-icons/fa'
+import { CgClose, CgMenu } from 'react-icons/cg'
+const SideMenu = ({ isMenuOpen ,toggleMenu = () => { } }) => {
 
   return (
-    <div className="navbar-container">
+    <div className={`sidemenu-con ${isMenuOpen ? "show" : "hide"}`}>
+
       <nav className="navbar">
-        <ul className={`navbar-lists `}>
+        <ul className={`sidebar-lists`}>
           <li>
             <NavLink
               to="/"
@@ -60,7 +47,7 @@ const Navbar = ({ toggleMenu = () => { } }) => {
             >
               Cart
               <FaShoppingCart className="cart-trolley" />
-              <span className="cart-total--item">{totalQuantity}</span>
+              <span className="cart-total--item"></span>
             </NavLink>
           </li>
           <li>
@@ -74,21 +61,19 @@ const Navbar = ({ toggleMenu = () => { } }) => {
             </NavLink>
           </li>
         </ul>
-        <div className="res-navbar-btn">
-          <CgMenu
-
-            className={`mobile-nav-icon`}
-            onClick={toggleMenu}
-          />
+        
+      </nav>
+      <div className="res-navbar-btn">
+         
           <CgClose
+
             className={`mobile-nav-close-icon`}
             onClick={toggleMenu}
           />
         </div>
-      </nav>
     </div>
-  );
-};
 
-export default Navbar;
+  )
+}
 
+export default SideMenu
