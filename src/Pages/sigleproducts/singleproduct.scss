@@ -75,13 +75,15 @@
   .single-page {
     display: grid;
     margin-top: 5rem;
-    margin-bottom: 5rem;
-  
+    margin-bottom: 6rem;
+
 
     .btn1 {
-     
-      margin-left:2rem ;
+
+      margin-left: 2rem;
+      margin-bottom: 10px;
     }
+
     .img-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -89,11 +91,13 @@
 
       .content {
         margin-left: 2rem;
+
         h1 {
           color: $grey-1;
           text-transform: capitalize;
           margin-top: 40px;
           font-weight: bold;
+          width: 300px;
 
         }
       }
@@ -109,23 +113,25 @@
         font-size: 14px;
         color: $grey-3;
       }
-      p{
-        color:$grey-3;
+
+      p {
+        color: $grey-3;
         font-size: 14px;
       }
+
       .information {
         text-transform: capitalize;
         width: 300px;
         display: grid;
         grid-template-columns: 125px 1fr;
-   
+
         span {
           font-weight: 700;
           color: $grey-3;
           font-weight: bold;
           font-size: 14px;
         }
-     
+
 
 
       }
@@ -133,6 +139,120 @@
       hr {
         border-top: 2px solid $grey-6;
         width: 500px;
+        color: inherit;
+        opacity: .35;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 768px) {
+  .single-page {
+    display: grid;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+
+
+    .btn1 {
+
+      margin-left: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .img-grid {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+
+}
+
+@media (max-width: 576px) {
+  .single-page {
+    display: grid;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+
+
+    .btn1 {
+
+      margin-left: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .img-grid {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+    }
+  }
+}
+
+@media (max-width:491px) {
+
+  .single-page {
+    display: grid;
+    margin-top: 1rem;
+    margin-bottom: 6rem;
+
+
+
+    .btn1 {
+
+      margin-left: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .img-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      width: 300px;
+      .content {
+        margin-left: 2rem;
+
+        h1 {
+          color: $grey-1;
+          text-transform: capitalize;
+          margin-top: 40px;
+          font-weight: bold;
+
+        }
+      }
+
+
+
+      .description {
+        line-height: 2;
+        width: 20em;
+        max-width: 40em;
+        font-size: 14px;
+        color: $grey-3;
+      }
+
+
+      .information {
+        text-transform: capitalize;
+        width: 300px;
+        display: grid;
+        grid-template-columns: 125px 1fr;
+
+        span {
+          font-weight: 700;
+          color: $grey-3;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+
+
+      }
+
+      hr {
+        border-top: 2px solid $grey-6;
+        width: 300px;
         color: inherit;
         opacity: .35;
       }

@@ -1,20 +1,19 @@
 @import "../../variable.scss";
 
 .section {
-    h4 {
-        color: #453227;
-    }
-
-    // padding: 5rem 0;
+    padding: 3rem 0;
 
     background: #eaded7;
-
+       h4{
+        color:$primary-1;
+       }
     .header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         margin-left: 0;
 
         h2 {
+
             color: #453227;
             margin-left: 60px;
             line-height: 1;
@@ -33,10 +32,10 @@
         }
     }
 
-
     .services-center {
+
         margin-top: 4rem;
-        display: grid;
+        display: flex;
         gap: 2.5rem;
         margin-left: 60px;
         margin-right: 60px;
@@ -64,30 +63,26 @@
     }
 
     span {
-        width: 3rem;
-        height: 3rem;
-        display: grid;
-        margin: 0 auto;
-        place-items: center;
-        margin-bottom: 1rem;
-        border-radius: 50%;
-        background: #eaded7;
-        color: #453227;
 
         svg {
             font-size: 2rem;
+            color: #453227;
         }
     }
 }
 
 @media (max-width: 992px) {
     .section {
+        padding: 0;
+
         .header {
             display: grid;
             grid-template-columns: 1fr;
             width: fit-content;
 
+
             h2 {
+                margin-top: 0;
                 color: #453227;
                 line-height: 1;
                 margin-bottom: 2rem;
@@ -95,6 +90,8 @@
                 font-weight: bold;
                 font-size: 24px;
                 margin-left: 2rem;
+                margin-top: 3rem;
+
             }
 
             p {
@@ -103,16 +100,16 @@
                 color: #795744;
                 margin-left: 2rem;
                 font-size: 14px;
-                width: max-content;
+
             }
         }
 
         .services-center {
-            margin-top: 4rem;
+            margin-top:1rem;
             display: flex;
             flex-direction: column;
             column-gap: 20px;
-            gap: 2.5rem;
+            gap: 1rem;
             align-items: center;
             margin-left: 0px;
             margin-right: 0px;
@@ -120,23 +117,17 @@
         }
 
         .service {
-            background: #c5a491;
-            text-align: center;
-            padding: 2.5rem 2rem;
-            border-radius: 0.25rem;
-            width: 580px;
+
+            width: 500px;
             height: 250px;
+            margin-bottom: 30px;
 
             p {
                 color: #5f4435;
                 font-size: 14px;
             }
 
-            article {
-                margin-right: 40px;
-                margin-left: 60px;
-                width: 300px;
-            }
+
 
         }
 
@@ -146,14 +137,9 @@
             display: grid;
             margin: 0 auto;
             place-items: center;
-            margin-bottom: 1rem;
             border-radius: 50%;
             background: #eaded7;
             color: #453227;
-
-            svg {
-                font-size: 2rem;
-            }
         }
 
     }
@@ -161,16 +147,81 @@
 
 }
 
-@media (min-width: 576px) {
-    .services-center {
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+@media (max-width: 576px) {
+    .section {
+         padding: 0;
+        .header {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: fit-content;
+
+            p {
+                margin-bottom: 0;
+                line-height: 1.8;
+                color: #795744;
+                margin-left: 2rem;
+                font-size: 14px;
+
+            }
+        }
+
+        .services-center {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            column-gap: 20px;
+            gap: 10px;
+            align-items: center;
+            margin-left: 0px;
+            margin-right: 0px;
+
+        }
+
+        .service {
+            width: 400px;
+            height: 250px;
+            margin-bottom: 30px;
+        }
+
+
+
     }
+
+
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 1280px) {
 
 
     .section-center {
         transform: translateY(5rem);
     }
+
+}
+
+@media (max-width:491px) {
+
+    .header {
+        p {
+            margin-bottom: 0;
+            line-height: 1.5;
+            color: #795744;
+            // margin-left: 2rem;
+            font-size: 12px;
+            width: 250px;
+        }
+    }
+    .services-center {
+        .service {
+            width: 300px;
+            height: 250px;
+            margin-bottom: 30px;
+        }
+    }
+
+
+    // .services-center {
+    //     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+    // }
 }

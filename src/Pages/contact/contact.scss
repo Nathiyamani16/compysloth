@@ -99,96 +99,59 @@
             input {
                 font-size: 1rem;
                 padding: 0.5rem 1rem;
-                border: 2px solid $black;
-                border-right: none;
-                color: $grey-3;
-                border-top-left-radius: $radius;
-                border-bottom-left-radius: $radius;
 
             }
 
-            button {
-                background: $primary-5;
-                text-transform: capitalize;
-                letter-spacing: 0.1rem;
-                cursor: pointer;
-                transition: all 0.3s linear;
-                color: $black;
-                border-top-right-radius: 0.2rem;
-                border-bottom-right-radius: 0.2rem;
-                font-family: Arial, Helvetica, sans-serif;
 
-            }
 
             button:hover {
                 color: $white;
             }
         }
     }
+}
 
-    // .conatct-con {
-    //     background-color: #fff;
-    //             display: grid;
-    //     grid-template-columns: 1fr;
-    //     margin-top:4rem;
-    //     margin-bottom: 2px;
 
-    //     float: left;
+@media (max-width: 576px) {
+    .conatct-con {
 
-    //     .title-con {
-    //         color: $grey-1;
-    //         line-height: 1;
-    //         margin-left: 60px;
-    //         float: left;
-    //     }
 
-    //     h2 {
-    //         letter-spacing: 1px;
-    //     }
+        .title-con {
 
-    //     p {
-    //        margin-top: 0;
-    //         line-height: 2;
-    //         color: $grey-5;
-    //         font-size: 14px;
+            margin-left: 40px;
+        }
 
-    //     }
+        .con-form {
+            margin-left: 1px;
+            margin-right: 1px;
+            width: 10vw;
+            display: grid;
+            grid-template-columns: 1fr auto;
 
-    //     .con-form {
-    //         margin-left: 60px;
-    //         width: 75vw;
-    //         max-width: 500px;
-    //         display: grid;
-    //         grid-template-columns: 1fr auto;
+            input {
+                font-size: 1rem;
+                padding: 0.4rem 0rem;
 
-    //         input {
-    //             font-size: 1rem;
-    //             padding: 0.5rem 1rem;
-    //             border: 2px solid $black;
-    //             border-right: none;
-    //             color: $grey-3;
-    //             border-top-left-radius: $radius;
-    //             border-bottom-left-radius: $radius;
+            }
 
-    //         }
 
-    //         button {
-    //             background: $primary-5;
-    //             text-transform: capitalize;
-    //             letter-spacing: 0.1rem;
-    //             cursor: pointer;
-    //             transition: all 0.3s linear;
-    //             color: $black;
-    //             border-top-right-radius: 0.2rem;
-    //             border-bottom-right-radius: 0.2rem;
-    //             font-family: Arial, Helvetica, sans-serif;
 
-    //         }
+            button:hover {
+                color: $white;
+            }
+        }
+    }
+}
 
-    //         button:hover {
-    //             color: $white;
-    //         }
-    //     }
+@media (max-width:450px) {
+    .conatct-con {
+        .con-form {
+            margin-left: 1px;
+            margin-right: 1px;
+            // width: 10vw;
+            display: grid;
+            grid-template-columns: 1fr auto;
+        }
+    }
 
-    // }
 }
