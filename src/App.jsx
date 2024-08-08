@@ -12,15 +12,19 @@ import Products from './Pages/Productpageui/products'
 import SideMenu from './components/Header/sidemenu'
 
 const App = () => {
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
-
-      <SideMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+      <SideMenu toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
       {!isMenuOpen &&
         <>
           <Header toggleMenu={toggleMenu} />
@@ -35,12 +39,7 @@ const App = () => {
         </>
       }
     </>
+  );
+};
 
-
-  )
-}
 export default App
-
-
-
-

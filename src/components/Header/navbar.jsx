@@ -80,10 +80,10 @@ const Navbar = ({ toggleMenu = () => { } }) => {
             className={`mobile-nav-icon`}
             onClick={toggleMenu}
           />
-          <CgClose
+          {/* <CgClose
             className={`mobile-nav-close-icon`}
             onClick={toggleMenu}
-          />
+          /> */}
         </div>
       </nav>
     </div>

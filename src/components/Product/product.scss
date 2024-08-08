@@ -92,7 +92,7 @@
   }
 }
 
-@media (max-width: 922px) {
+@media (max-width: 955px) {
 
   .product-grid {
     display: grid;
@@ -195,7 +195,7 @@
     gap: 10px;
     border-radius: $radius;
           margin-top: 5px;
-
+      margin-left: 2px;
     img {
       width: 300px;
       height: 200px;
