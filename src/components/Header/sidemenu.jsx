@@ -4,8 +4,20 @@ import './sidemenu.scss';
 import { NavLink } from 'react-router-dom';
 import { FaShoppingCart, FaUserPlus } from 'react-icons/fa';
 import { CgClose } from 'react-icons/cg';
+import { useSelector } from 'react-redux';
 
 const SideMenu = ({ isMenuOpen, toggleMenu = () => { }, closeMenu = () => { } }) => {
+
+
+  const { cartproduct: product } = useSelector(state => state.products);
+
+
+
+  const TotalQuantity = () => {
+    return product.reduce((curr, idx) => curr + idx.quantity, 0)
+  };
+
+  const totalQuantity = TotalQuantity();
   return (
     <div className={`sidemenu-con px-3 ${isMenuOpen ? 'show' : 'hide'}`}>
       <div className="mobile-nav-close-icon " >
@@ -42,11 +54,11 @@ const SideMenu = ({ isMenuOpen, toggleMenu = () => { }, closeMenu = () => { } })
             <NavLink to="/cart" className="navbar-link" onClick={closeMenu}>
               Cart
               <FaShoppingCart className="cart-trolley" />
-              <span className="cart-total--item">3</span>
+              <span className="cart-total--item">{totalQuantity}</span>
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/login" className="navbar-link" onClick={closeMenu}>
+          <li className='login-sidemenu'>
+            <NavLink to="/login" className="navbar-link login-sidemenu" onClick={closeMenu}>
               Login
               <FaUserPlus className="user" />
             </NavLink>

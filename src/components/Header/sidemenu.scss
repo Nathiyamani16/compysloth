@@ -15,14 +15,14 @@
         transform: translateX(0);
     }
      img{
-        margin-top: 5px;
+        margin-top: 10px;
         width: 155px;
         margin-left: 10px;
         overflow: hidden;
         padding-top:0;
      }
     .mobile-nav-close-icon {
-        margin-top: 5px;
+        margin-top: 10px;
         float: right;
         font-size: 10px;
         // position: absolute;
@@ -85,7 +85,9 @@
         width: 100%;
         list-style: none;
 
-
+        .login-sidemenu{
+            margin-top: 9px;
+           }
         .navbar-link {
             display: flex;
             align-items: center;
@@ -94,12 +96,12 @@
             font-size: 1.5rem;
             margin: 0 20px;
             transition: color 0.2s;
-
+   
             &:hover {
                 // background:$grey-10;
                 // color: $primary-5;
             }
-
+      
             .cart-trolley,
             .user {
                 margin-left: 1px;

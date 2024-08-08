@@ -159,7 +159,12 @@ img {
 
   @media (max-width: 991px) {
 
-
+    img {
+      width: 175px;
+      margin-left: 10px;
+      overflow: hidden;
+      padding-top: 3px;
+    }
         .navbar-lists, 
         .navbar-login {
           display:none;
